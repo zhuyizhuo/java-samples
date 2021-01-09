@@ -26,7 +26,7 @@ package com.github.zhuo.algorithm.lintcode.problem2;
 public class TrailingZeros {
 
     public static void main(String[] args) {
-
+        //TODO
     }
 
     /*

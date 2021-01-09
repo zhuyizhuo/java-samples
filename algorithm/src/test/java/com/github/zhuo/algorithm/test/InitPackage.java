@@ -9,11 +9,11 @@ public class InitPackage {
 
     public static void main(String[] args) {
         String property = System.getProperty("user.dir");
-//        String dir = "leetcode/problems";
-        String dir = "lintcode/problem";
+        String dir = "leetcode/problems";
+//        String dir = "lintcode/problem";
         System.out.println(property);
         File file;
-        for (int i = 1; i < 3; i++) {
+        for (int i = 6; i < 8; i++) {
             file = new File(property + "/algorithm/src/main/java/com/github/zhuo/algorithm/" + dir + i);
             if (!file.exists()){
                 file.mkdirs();
