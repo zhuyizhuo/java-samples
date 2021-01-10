@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * Java8 API Predicate 的各种使用方式
+ */
 public class PredicateSample {
 
     public static void main(String[] args) {
