@@ -1,8 +1,13 @@
 package com.github.zhuo.algorithm.leetcode.problems8;
 
+/**
+ * https://leetcode.com/problems/string-to-integer-atoi/
+ *
+ */
 public class StringToInteger {
 
     public static void main(String[] args) {
+        //TODO
         System.out.println(myAtoi("124 asdfaf"));
     }
 

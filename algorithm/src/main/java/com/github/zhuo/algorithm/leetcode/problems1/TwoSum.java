@@ -49,6 +49,14 @@ public class TwoSum {
         }
     }
 
+    /**
+     *
+     * 思路 使用哈希表，循环给定数组，从哈希表中获取目标数字与当前数字的差，
+     * 未获取到则将当前数字及下标放入哈希表
+     * 获取到的话 返回当前数字下标及哈希表中数字下标。
+     *
+     * 典型的 空间换时间，将时间复杂度降低至 O(n)
+     */
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> m = new HashMap();
         for (int i = 0,len=nums.length; i < len; i++) {
