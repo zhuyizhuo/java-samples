@@ -46,11 +46,38 @@ package com.github.zhuo.algorithm.leetcode.problems4;
 public class FindMedianSortedArrays {
 
     public static void main(String[] args) {
+        System.out.println(findMedian(new int[]{}));
         //TODO
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int num1Len = nums1.length;
+        int num2Len = nums2.length;
+        if (num1Len == 0) {
+            return findMedian(nums2);
+        }
+        if (num2Len == 0) {
+            return findMedian(nums1);
+        }
+        Integer median = findMedian(nums1);
+        Integer median1 = findMedian(nums2);
+        if (median == median1) {
+            return median;
+        }
+        int left = (num1Len + num2Len + 1) / 2;
+        int right = (num1Len + num2Len + 2) / 2;
 
         return 0;
     }
+
+    private static Integer findMedian(int[] nums) {
+        int len = nums.length;
+        if (len % 2 == 0) {
+            int i = len / 2;
+            return (nums[i] + nums[i - 1]) / 2;
+        } else {
+            return nums[len / 2];
+        }
+    }
+
 }
