@@ -27,16 +27,16 @@ public class ValidParentheses {
             return false;
         }
         for (int i = 0, len = s.length(); i < len; i++) {
-            char c = s.charAt(i);
-            if(c == '(' || c == '[' || c == '{'){
-                linkedList.push(c);
+            char current = s.charAt(i);
+            if(current == '(' || current == '[' || current == '{'){
+                linkedList.push(current);
             } else {
                 if (linkedList.isEmpty()){
                     return false;
                 }
-                char c1 = linkedList.getFirst().charValue();
-                if(c == ')' && c1 == '(' || c == ']' && c1 == '[' || c == '}' && c1 == '{'){
-                        linkedList.removeFirst();
+                char prev = linkedList.getFirst().charValue();
+                if(current == ')' && prev == '(' || current == ']' && prev == '[' || current == '}' && prev == '{'){
+                    linkedList.removeFirst();
                 } else {
                     return false;
                 }
