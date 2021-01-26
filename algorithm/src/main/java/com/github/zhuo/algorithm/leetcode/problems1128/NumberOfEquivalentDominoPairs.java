@@ -32,6 +32,7 @@ import java.util.Set;
 public class NumberOfEquivalentDominoPairs {
 
     public static void main(String[] args) {
+        //TODO 待改进更优解
         System.out.println(numEquivDominoPairs(new int[][]{{1,2},{2,1},{3,4},{4,3},{3,4},{5,6}}));
     }
 
@@ -51,20 +52,19 @@ public class NumberOfEquivalentDominoPairs {
             String reKey = dominoe[1] + "_" + dominoe[0];
             Integer dominoe0 = m.get(key);
             Integer dominoe1 = m.get(reKey);
+            //统计重复出现次数
             if (dominoe0 != null || dominoe1 != null){
                 Integer integer = dominoe0 != null ? dominoe0 : dominoe1;
                 m.put(key, integer + 1);
-                if (!key.equals(reKey)){
-                    m.remove(reKey);
-                }
             } else {
                 m.put(key, 0);
-                if (!key.equals(reKey)){
-                    m.remove(reKey);
-                }
+            }
+            if (!key.equals(reKey)){
+                m.remove(reKey);
             }
         }
         int count = 0;
+        //根据重复出现次数计算总数
         for (Map.Entry<String, Integer> s: m.entrySet()) {
             Integer value = s.getValue();
             for (int i = 1; i <= value; i++) {
