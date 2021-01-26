@@ -2,6 +2,7 @@ package com.github.zhuo.algorithm.leetcode.problems1128;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/
@@ -31,13 +32,19 @@ import java.util.Map;
 public class NumberOfEquivalentDominoPairs {
 
     public static void main(String[] args) {
-        //TODO
-        System.out.println(numEquivDominoPairs(new int[][]{{1,2},{1,2},{1,1},{1,2},{2,1}}));
+        System.out.println(numEquivDominoPairs(new int[][]{{1,2},{2,1},{3,4},{4,3},{3,4},{5,6}}));
     }
 
+    /**
+     * x 张相同的牌 两两匹配组合 共有多少种组合
+     * 重复出现次数   组合数
+     * 1               1
+     * 2               3 = 2+1
+     * 3               6 = 3+2+1
+     * 4              10 = 4+3+2+1
+     */
     public static int numEquivDominoPairs(int[][] dominoes) {
         Map<String, Integer> m = new HashMap<>();
-        int count = 0;
         for (int i = 0; i < dominoes.length; i++) {
             int[] dominoe = dominoes[i];
             String key = dominoe[0] + "_" + dominoe[1];
@@ -45,11 +52,23 @@ public class NumberOfEquivalentDominoPairs {
             Integer dominoe0 = m.get(key);
             Integer dominoe1 = m.get(reKey);
             if (dominoe0 != null || dominoe1 != null){
-                m.put(key, 2 * dominoe0);
-
+                Integer integer = dominoe0 != null ? dominoe0 : dominoe1;
+                m.put(key, integer + 1);
+                if (!key.equals(reKey)){
+                    m.remove(reKey);
+                }
             } else {
-//                m.put(dominoe[0], dominoe[1]);
-//                m.put(dominoe[1], dominoe[0]);
+                m.put(key, 0);
+                if (!key.equals(reKey)){
+                    m.remove(reKey);
+                }
+            }
+        }
+        int count = 0;
+        for (Map.Entry<String, Integer> s: m.entrySet()) {
+            Integer value = s.getValue();
+            for (int i = 1; i <= value; i++) {
+                count += i;
             }
         }
         return count;
