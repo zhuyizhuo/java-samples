@@ -3,6 +3,8 @@ package com.github.zhuo.algorithm.leetcode.problems2;
 /**
  * https://leetcode.com/problems/add-two-numbers/
  *
+ * 两数相加
+ *
  * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
  *
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -48,35 +50,35 @@ public class AddTwoNumbers {
         int carry = 0;
         while (true){
             int sum = carry;
-           if (l1 != null){
+            if (l1 != null){
                sum += l1.val;
-           }
-           if (l2 != null){
-               sum += l2.val;
-           }
-           if (l1 == null && l2 == null){
-               if (carry == 1){
+            }
+            if (l2 != null){
+                sum += l2.val;
+            }
+            if (l1 == null && l2 == null){
+                if (carry == 1){
                    if (head == null){
                        head = tail = new ListNode(sum);
                    } else {
                        tail.next = new ListNode(sum);
                        tail = tail.next;
                    }
-               }
-               break;
-           }
-           if (l1 != null){
-               l1 = l1.next;
-           }
-           if (l2 != null){
-               l2 = l2.next;
-           }
-           if (sum > 9){
-               sum -= 10;
-               carry = 1;
-           } else {
-               carry = 0;
-           }
+                }
+                break;
+            }
+            if (l1 != null){
+                l1 = l1.next;
+            }
+            if (l2 != null){
+                l2 = l2.next;
+            }
+            if (sum > 9){
+                sum -= 10;
+                carry = 1;
+            } else {
+                carry = 0;
+            }
             if (head == null){
                 head = tail = new ListNode(sum);
             } else {
