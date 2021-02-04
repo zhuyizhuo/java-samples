@@ -37,12 +37,18 @@ public class NumberOfEquivalentDominoPairs {
     }
 
     /**
-     * x 张相同的牌 两两匹配组合 共有多少种组合
+     * 思路：
+     * 分析题意可将该题转为如下表述:
+     * 1. 找出给出数组中所有相同或反转后相同的牌的张数。
+     * 2. 给你 x 张牌, 两两匹配组合 共有多少种组合?
+     *
      * 重复出现次数   组合数
      * 1               1
      * 2               3 = 2+1
      * 3               6 = 3+2+1
      * 4              10 = 4+3+2+1
+     *
+     * 可用等差数列求和公式算出组合数。
      */
     public static int numEquivDominoPairs(int[][] dominoes) {
         Map<String, Integer> m = new HashMap<>();
