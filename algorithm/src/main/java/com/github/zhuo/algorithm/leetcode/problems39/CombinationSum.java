@@ -23,7 +23,8 @@ import java.util.Map;
 public class CombinationSum {
 
     public static void main(String[] args) {
-        //TODO
+        //TODO 待理解
+
     }
 
     /**
@@ -36,31 +37,25 @@ public class CombinationSum {
      * ]
      */
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        Arrays.sort(candidates);
-        List<List<Integer>> resp = new ArrayList<>();
-        List<Integer> inner;
-        Map<Integer, Integer> m = new HashMap<>();
-        for (int i = 0; i < candidates.length; i++) {
-            inner = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<Integer> combine = new ArrayList<Integer>();
+        dfs(candidates, target, ans, combine, 0);
+        return ans;
+    }
 
-            if (m.get(target - candidates[i]) == null){
-                m.put(candidates[i], candidates[i]);
-            } else {
-                inner.add(candidates[i]);
-                inner.add(m.get(target - candidates[i]));
-            }
-
-            if (candidates[i] == target){
-                inner.add(candidates[i]);
-            }
-
-            if (target % candidates[i] == 0){
-                for (int j = 0; j < target / candidates[i]; j++) {
-                    inner.add(candidates[i]);
-                }
-            }
-            resp.add(inner);
+    public void dfs(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int idx) {
+        if (idx == candidates.length) {
+            return;
         }
-        return resp;
+        if (target == 0) {
+            ans.add(new ArrayList<Integer>(combine));
+            return;
+        }
+        dfs(candidates, target, ans, combine, idx + 1);
+        if (target - candidates[idx] >= 0) {
+            combine.add(candidates[idx]);
+            dfs(candidates, target - candidates[idx], ans, combine, idx);
+            combine.remove(combine.size() - 1);
+        }
     }
 }
