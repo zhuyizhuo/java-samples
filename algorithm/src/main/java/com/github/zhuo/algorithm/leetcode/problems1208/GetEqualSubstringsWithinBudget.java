@@ -19,7 +19,8 @@ package com.github.zhuo.algorithm.leetcode.problems1208;
 public class GetEqualSubstringsWithinBudget {
 
     public static void main(String[] args) {
-        //todo 和 424 题相似
+        //TODO 和 424 题相似
+
     }
 
     /**
