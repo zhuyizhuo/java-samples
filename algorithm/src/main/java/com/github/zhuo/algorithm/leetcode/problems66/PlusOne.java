@@ -1,7 +1,5 @@
 package com.github.zhuo.algorithm.leetcode.problems66;
 
-import java.util.Arrays;
-
 /**
  * https://leetcode-cn.com/problems/plus-one/
  *
