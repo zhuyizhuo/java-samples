@@ -60,8 +60,6 @@ public class SlidingWindowMaximum {
         private final int total;
         /** 最左元素下标 */
         private int left = 0;
-        /** 当前容量 */
-        int count = 0;
         /** 最大元素 */
         Integer max;
 
@@ -71,13 +69,18 @@ public class SlidingWindowMaximum {
         }
 
         public void add(int para){
-            if(++count > total){
+            //如果当前容量等于总容量
+            if(super.size() == total){
                 //如果最左元素为最大元素，将最大元素置为空
                 if (nums[left] == max){
                     max = null;
                 }
-                //FIXME 移除最左元素  此解法如果存在两个相同的参数，则会出现问题
+                //移除最左元素
                 super.remove(nums[left]);
+                //如果移除的 key 有多个,则补全容量
+                while (super.size() < total){
+                    super.put(nums[left], nums[left]);
+                }
                 //最左元素下标加一
                 left++;
             }
@@ -94,7 +97,6 @@ public class SlidingWindowMaximum {
             if (max != null){
                 return max;
             }
-            System.out.println("剩余元素:" + super.toString());
             //不存在最大元素则迭代Map取最大元素
             Set<Map.Entry<Integer, Integer>> entries = super.entrySet();
             for (Map.Entry<Integer, Integer> entry : entries) {
