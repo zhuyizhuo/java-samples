@@ -1,7 +1,5 @@
 package com.github.zhuo.algorithm.leetcode.problems239;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 
 /**
@@ -15,11 +13,15 @@ public class SlidingWindowMaximum {
 
     public static void main(String[] args) {
 //        int[] ints = maxSlidingWindow(new int[]{1, 3, -1, -3, -6, 3, 6, 7}, 3);
-        int[] ints = maxSlidingWindow(new int[]{-7,-8,7,5,7,1,6,0}, 4);
-        for (int i = 0; i < ints.length; i++) {
-            System.out.println(ints[i]);
-        }
-        System.out.println();
+//        int[] ints = maxSlidingWindow(new int[]{-7,-8,7,5,7,1,6,0}, 4);
+//        int[] ints = maxSlidingWindow(new int[]{1,3,1,2,0,5}, 3);
+        long startTime = System.currentTimeMillis();
+        int[] ints = maxSlidingWindow(new int[]{}, 1000);
+//        for (int i = 0; i < ints.length; i++) {
+//            System.out.println(ints[i]);
+//        }
+        long l = System.currentTimeMillis();
+        System.out.println("耗时:" + (l - startTime));
     }
 
     /**
@@ -62,6 +64,8 @@ public class SlidingWindowMaximum {
         private int left = 0;
         /** 最大元素 */
         Integer max;
+        /** 当前容量 */
+        int count = 0;
 
         public MaximumMap(int[] nums, int total) {
             this.nums = nums;
@@ -70,16 +74,17 @@ public class SlidingWindowMaximum {
 
         public void add(int para){
             //如果当前容量等于总容量
-            if(super.size() == total){
+            if(count >= total){
                 //如果最左元素为最大元素，将最大元素置为空
                 if (nums[left] == max){
                     max = null;
                 }
-                //移除最左元素
-                super.remove(nums[left]);
-                //如果移除的 key 有多个,则补全容量
-                while (super.size() < total){
-                    super.put(nums[left], nums[left]);
+                //移除最左元素 如果有多个元素 则将元素的值减1
+                Integer integer = super.get(nums[left]);
+                if (integer == 1){
+                    super.remove(nums[left]);
+                } else {
+                    super.put(nums[left], integer - 1);
                 }
                 //最左元素下标加一
                 left++;
@@ -88,8 +93,14 @@ public class SlidingWindowMaximum {
             if (max != null && max < para){
                 max = para;
             }
-            //放入新增元素
-            super.put(para, para);
+            //放入新增元素 如果元素已存在 则加一
+            Integer integer = super.get(para);
+            if (integer == null){
+                super.put(para, 1);
+            } else {
+                super.put(para, integer+1);
+            }
+            count++;
         }
 
         public int getMax(){
@@ -97,11 +108,9 @@ public class SlidingWindowMaximum {
             if (max != null){
                 return max;
             }
-            //不存在最大元素则迭代Map取最大元素
-            Set<Map.Entry<Integer, Integer>> entries = super.entrySet();
-            for (Map.Entry<Integer, Integer> entry : entries) {
-                max = entry.getValue();
-            }
+            System.out.println("tos:"+super.toString());
+            //不存在最大元素则取最大元素
+            max = super.lastKey();
             return max;
         }
     }
