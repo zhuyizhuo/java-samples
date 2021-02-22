@@ -17,6 +17,8 @@ public class TwoSumBruteForce{
     /**
      * 暴力解法是拿每个数字和数组中另外所有数字求和与目标数字对比
      * 时间复杂度最差可达到 O(n^2)
+     *
+     * 执行用时: 1 ms
      */
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0, len = nums.length; i < len; i++) {

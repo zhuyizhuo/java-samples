@@ -5,8 +5,9 @@ import java.util.Map;
 
 /**
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
- * Given a string s, find the length of the longest substring without repeating characters.
  *
+ * 无重复字符的最长子串
+ *  给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
  *
  * Example 1:
  *
@@ -34,7 +35,7 @@ import java.util.Map;
  *
  * Constraints:
  *
- * 0 <= s.length <= 5000
+ * 0 <= s.length <= 50000
  * s consists of English letters, digits, symbols and spaces.
  */
 public class LengthOfLongestSubstring {
@@ -44,6 +45,9 @@ public class LengthOfLongestSubstring {
         System.out.println(lengthOfLongestSubstring(s));
     }
 
+    /**
+     *
+     */
     public static int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0){
             return 0;

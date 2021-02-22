@@ -14,12 +14,11 @@ public class SlidingWindowMaximum {
     public static void main(String[] args) {
 //        int[] ints = maxSlidingWindow(new int[]{1, 3, -1, -3, -6, 3, 6, 7}, 3);
 //        int[] ints = maxSlidingWindow(new int[]{-7,-8,7,5,7,1,6,0}, 4);
-//        int[] ints = maxSlidingWindow(new int[]{1,3,1,2,0,5}, 3);
+        int[] ints = maxSlidingWindow(new int[]{1,3,1,2,0,5}, 3);
         long startTime = System.currentTimeMillis();
-        int[] ints = maxSlidingWindow(new int[]{}, 1000);
-//        for (int i = 0; i < ints.length; i++) {
-//            System.out.println(ints[i]);
-//        }
+        for (int i = 0; i < ints.length; i++) {
+            System.out.println(ints[i]);
+        }
         long l = System.currentTimeMillis();
         System.out.println("耗时:" + (l - startTime));
     }
@@ -75,13 +74,13 @@ public class SlidingWindowMaximum {
         public void add(int para){
             //如果当前容量等于总容量
             if(count >= total){
-                //如果最左元素为最大元素，将最大元素置为空
-                if (nums[left] == max){
-                    max = null;
-                }
                 //移除最左元素 如果有多个元素 则将元素的值减1
                 Integer integer = super.get(nums[left]);
                 if (integer == 1){
+                    //如果最左元素为最大元素，将最大元素置为空
+                    if (nums[left] == max){
+                        max = null;
+                    }
                     super.remove(nums[left]);
                 } else {
                     super.put(nums[left], integer - 1);

@@ -1,18 +1,18 @@
 package com.github.zhuo.algorithm.leetcode.problems1;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * https://leetcode.com/problems/two-sum/
  *
- * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+ * 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。
  *
- * You may assume that each input would have exactly one solution, and you may not use the same element twice.
+ * 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
  *
- * You can return the answer in any order.
+ * 你可以按任意顺序返回答案。
  *
+ * 难度 简单
  *
  * Example 1:
  *
@@ -56,6 +56,8 @@ public class TwoSum {
      * 获取到的话 返回当前数字下标及哈希表中数字下标。
      *
      * 典型的 空间换时间，将时间复杂度降低至 O(n)
+     *
+     * 执行用时： 0 ms , 在所有 Java 提交中击败了 100% 的用户
      */
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> m = new HashMap();
