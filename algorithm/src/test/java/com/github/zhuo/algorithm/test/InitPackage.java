@@ -13,7 +13,7 @@ public class InitPackage {
 //        String dir = "lintcode/problem";
         System.out.println(property);
         File file;
-        for (int i = 1; i < 101; i++) {
+        for (int i = 1208; i < 1209; i++) {
             file = new File(property + "/algorithm/src/main/java/com/github/zhuo/algorithm/" + dir + i);
             if (!file.exists()){
                 file.mkdirs();
