@@ -1,11 +1,17 @@
 package com.github.zhuo.algorithm.leetcode.problems21;
 
 /**
- * https://leetcode.com/problems/merge-two-sorted-lists/
+ * https://leetcode-cn.com/problems/merge-two-sorted-lists/
  *
  * 合并两个有序链表
+ * 难度 简单
+ * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  *
- * 此题解法执行用时 0ms 超过 100% 的用户 舒服
+ * 提示：
+ *
+ * 两个链表的节点数目范围是 [0, 50]
+ * -100 <= Node.val <= 100
+ * l1 和 l2 均按 非递减顺序 排列
  */
 public class MergeTwoSortedLists {
 
@@ -24,6 +30,8 @@ public class MergeTwoSortedLists {
      * 思路: 判断两个链表的值，如果头结点为空，同时设置头尾节点为较小的链表，并且将较小链表指向当前链表的下一节点。
      * 如果头节点不为空，则将尾节点的下一个节点设置为较小的链表，并且将较小链表指向当前链表的下一节点，同时将尾结点指向尾节点的下一个节点。
      * 直至有一个链表元素全部循环完毕，将尾结点的下一个节点设置为另一个链表，并结束循环。
+     *
+     * 执行用时 0ms 超过 100% 的用户
      */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null){
