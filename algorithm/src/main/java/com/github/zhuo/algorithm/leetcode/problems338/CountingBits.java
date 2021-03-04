@@ -25,10 +25,28 @@ package com.github.zhuo.algorithm.leetcode.problems338;
 public class CountingBits {
 
     public static void main(String[] args) {
-
+        int[] x = countBits(2);
+        for (int i = 0; i < x.length; i++) {
+            System.out.println(x[i]);
+        }
     }
 
-    public int[] countBits(int num) {
-        return null;
+    /**
+     * 不讲武德法  使用内置函数
+     */
+    public static int[] countBits(int num) {
+        int[] resp = new int[num+1];
+        for (int i = 0; i <= num; i++) {
+            resp[i] = Integer.bitCount(i);;
+        }
+        return resp;
+    }
+
+    public static int[] countBits1(int num) {
+        int[] resp = new int[num+1];
+        for (int i = 0; i <= num; i++) {
+            resp[i] = Integer.bitCount(i);;
+        }
+        return resp;
     }
 }
