@@ -24,6 +24,9 @@ public class PascalTriangleII {
     /**
      * 此处的定义是从第0行开始
      * 即第0行1个元素  第1行2个元素 以此类推
+     *
+     * 执行用时: 2 ms
+     * 内存消耗: 36.5 MB
      */
     public static List<Integer> getRow(int rowIndex) {
         List<Integer> l = new ArrayList<>();
