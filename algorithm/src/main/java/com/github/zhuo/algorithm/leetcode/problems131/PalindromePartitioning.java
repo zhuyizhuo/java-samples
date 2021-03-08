@@ -1,5 +1,7 @@
 package com.github.zhuo.algorithm.leetcode.problems131;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,32 +14,43 @@ import java.util.List;
  * 回文串 是正着读和反着读都一样的字符串。
  */
 public class PalindromePartitioning {
-
     public static void main(String[] args) {
-
+        //TODO 动态规划
     }
+    
+    boolean[][] f;
+    List<List<String>> ret = new ArrayList<List<String>>();
+    List<String> ans = new ArrayList<String>();
+    int n;
 
-    /**
-     * 回溯 + 动态规划预处理
-     * 需研究动态规划 TODO
-     */
     public List<List<String>> partition(String s) {
-        int length = s.length();
-        StringBuilder sb = new StringBuilder("#");
-        for (int i = 0; i < length; i++) {
-            sb.append(s.charAt(i)).append("#");
-        }
-        int length1 = sb.length();
-        for (int i = 0; i < length1; i++) {
-            String temp = centerSpread(sb.toString(), 0, length1);
+        n = s.length();
+        f = new boolean[n][n];
+        for (int i = 0; i < n; ++i) {
+            Arrays.fill(f[i], true);
         }
 
-        return null;
+        for (int i = n - 1; i >= 0; --i) {
+            for (int j = i + 1; j < n; ++j) {
+                f[i][j] = (s.charAt(i) == s.charAt(j)) && f[i + 1][j - 1];
+            }
+        }
+
+        dfs(s, 0);
+        return ret;
     }
 
-    private String centerSpread(String toString, int i, int length1) {
-        int left = i - 1;
-        int right = i + 1;
-        return null;
+    public void dfs(String s, int i) {
+        if (i == n) {
+            ret.add(new ArrayList<String>(ans));
+            return;
+        }
+        for (int j = i; j < n; ++j) {
+            if (f[i][j]) {
+                ans.add(s.substring(i, j + 1));
+                dfs(s, j + 1);
+                ans.remove(ans.size() - 1);
+            }
+        }
     }
 }
