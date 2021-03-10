@@ -4,6 +4,7 @@ package com.github.zhuo.algorithm.leetcode.problems206;
  * https://leetcode-cn.com/problems/reverse-linked-list/
  *
  * 反转链表
+ * 难度 简单
  *
  * 此类题型需反复练习
  */
