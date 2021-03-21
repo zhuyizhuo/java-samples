@@ -1,6 +1,8 @@
 package com.github.zhuo.algorithm.leetcode.problems1_100.problems73;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -27,7 +29,7 @@ public class SetMatrixZeroes {
     public static void main(String[] args) {
 //        int[][] matrix = new int[][]{{1,1,1},{1,0,1},{1,1,1}};
         int[][] matrix = new int[][]{{0,1,2,0},{3,4,5,2},{1,3,1,5}};
-        setZeroes(matrix);
+        setZeroesNew(matrix);
         for (int i = 0; i < matrix.length; i++) {
             int length = matrix[i].length;
             for (int j = 0; j < length; j++) {
@@ -59,6 +61,43 @@ public class SetMatrixZeroes {
                 if (rowSet.contains(i) || colSet.contains(j)){
                     matrix[i][j] = 0;
                 }
+            }
+        }
+    }
+
+    /**
+     * 在上题解思路上优化，减少原数组循环次数
+     */
+    public static void setZeroesNew(int[][] matrix) {
+        int length = matrix.length;
+        int length1 = matrix[0].length;
+        HashMap<Integer,Integer> rowMap = new HashMap<>();
+        HashMap<Integer,Integer> colMap = new HashMap<>();
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length1; j++) {
+                if (matrix[i][j] == 0){
+                    if (!rowMap.containsKey(i)){
+                        rowMap.put(i, j);
+                    }
+                    if (!colMap.containsKey(j)){
+                        colMap.put(j, i);
+                    }
+                } else if (rowMap.containsKey(i) || colMap.containsKey(j)){
+                    //后续有包含需置为0的行列  则直接置为0
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for (Map.Entry<Integer, Integer> integerIntegerEntry : rowMap.entrySet()) {
+            //将需置为0的行 该行之前的列置为0
+            for (int i = 0; i < integerIntegerEntry.getValue(); i++) {
+                matrix[integerIntegerEntry.getKey()][i] = 0;
+            }
+        }
+        for (Map.Entry<Integer, Integer> integerIntegerEntry : colMap.entrySet()) {
+            //将需置为0的列 该列之前的行置为0
+            for (int i = 0; i < integerIntegerEntry.getValue(); i++) {
+                matrix[i][integerIntegerEntry.getKey()] = 0;
             }
         }
     }
