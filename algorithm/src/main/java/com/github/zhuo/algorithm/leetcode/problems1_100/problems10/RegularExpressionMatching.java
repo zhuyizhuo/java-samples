@@ -1,7 +1,7 @@
 package com.github.zhuo.algorithm.leetcode.problems1_100.problems10;
 
 /**
- * https://leetcode.com/problems/regular-expression-matching/
+ * https://leetcode-cn.com/problems/regular-expression-matching/
  *
  * 正则表达式匹配
  * 难度:困难
