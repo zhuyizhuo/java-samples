@@ -29,7 +29,19 @@ package com.github.zhuo.algorithm.leetcode.problems1780;
 public class CheckPowersOfThree {
 
     public static void main(String[] args) {
-        //TODO
+        System.out.println(checkPowersOfThree(12));
     }
 
+    /**
+     * 转为 3进制数 判断每位上的数字, 如果出现某一位为2则不满足题意(若干个不同的三的幂之和)。
+     * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 35.4 MB , 在所有 Java 提交中击败了 32.68% 的用户
+     */
+    public static boolean checkPowersOfThree(int n) {
+        while (n != 0){
+            if (n%3 == 2) return false;
+            n = n/3;
+        }
+        return true;
+    }
 }
