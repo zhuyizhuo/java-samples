@@ -21,7 +21,7 @@ import com.github.zhuo.algorithm.common.ListNode;
 public class ReverseLinkedListII {
 
     public static void main(String[] args) {
-        System.out.println(reverseBetween());
+//        System.out.println(reverseBetween());
     }
 
     public static ListNode reverseBetween(ListNode head, int left, int right) {
