@@ -19,6 +19,10 @@ public class RemoveDuplicatesFromSortedList {
         }
     }
 
+    /**
+     * 执行用时: 2 ms
+     * 内存消耗: 37.8 MB
+     */
     public static ListNode deleteDuplicates(ListNode head) {
         if (head == null){
             return null;
