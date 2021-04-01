@@ -1,7 +1,7 @@
 package com.github.zhuo.algorithm.leetcode.problems1_100.problems2;
 
 /**
- * https://leetcode.com/problems/add-two-numbers/
+ * https://leetcode-cn.com/problems/add-two-numbers/
  *
  * 两数相加
  *
