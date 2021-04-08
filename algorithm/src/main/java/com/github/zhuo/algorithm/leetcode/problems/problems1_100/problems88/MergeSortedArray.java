@@ -28,6 +28,8 @@ public class MergeSortedArray {
     /**
      * 简单粗暴的解法
      * 此解法并没用到原数组有序这一条件
+     * 执行用时: 1 ms
+     * 内存消耗: 38.6 MB
      */
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         if (n == 0){
