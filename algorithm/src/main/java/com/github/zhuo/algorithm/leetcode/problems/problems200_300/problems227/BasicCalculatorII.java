@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems227;
+package com.github.zhuo.algorithm.leetcode.problems.problems200_300.problems227;
 
 import java.util.Deque;
 import java.util.LinkedList;

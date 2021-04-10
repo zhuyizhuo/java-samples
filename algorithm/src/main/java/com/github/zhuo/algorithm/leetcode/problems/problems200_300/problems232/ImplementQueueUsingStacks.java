@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems232;
+package com.github.zhuo.algorithm.leetcode.problems.problems200_300.problems232;
 
 public class ImplementQueueUsingStacks {
 

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems206;
+package com.github.zhuo.algorithm.leetcode.problems.problems200_300.problems206;
 
 /**
  * https://leetcode-cn.com/problems/reverse-linked-list/

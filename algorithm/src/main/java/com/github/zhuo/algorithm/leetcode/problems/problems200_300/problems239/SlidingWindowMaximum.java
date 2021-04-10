@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems239;
+package com.github.zhuo.algorithm.leetcode.problems.problems200_300.problems239;
 
 import java.util.TreeMap;
 
