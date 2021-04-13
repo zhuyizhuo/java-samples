@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems766;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems766;
 
 /**
  * https://leetcode-cn.com/problems/toeplitz-matrix/

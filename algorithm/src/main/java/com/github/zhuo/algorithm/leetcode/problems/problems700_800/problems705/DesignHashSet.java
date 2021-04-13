@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems705;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems705;
 
 /**
  * https://leetcode-cn.com/problems/design-hashset/

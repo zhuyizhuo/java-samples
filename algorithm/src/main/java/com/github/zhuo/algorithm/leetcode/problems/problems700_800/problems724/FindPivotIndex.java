@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems724;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems724;
 
 /**
  * https://leetcode-cn.com/problems/find-pivot-index/

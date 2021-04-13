@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems781;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems781;
 
 import java.util.Arrays;
 import java.util.HashMap;

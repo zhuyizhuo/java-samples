@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems703;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems703;
 
 import java.util.ArrayList;
 import java.util.Collections;

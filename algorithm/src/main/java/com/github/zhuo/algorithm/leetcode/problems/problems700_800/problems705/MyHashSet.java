@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems705;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems705;
 
 /**
  * 执行用时： 27 ms , 在所有 Java 提交中击败了 23.18% 的用户

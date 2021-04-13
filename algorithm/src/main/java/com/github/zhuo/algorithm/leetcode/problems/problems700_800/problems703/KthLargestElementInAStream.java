@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems703;
+package com.github.zhuo.algorithm.leetcode.problems.problems700_800.problems703;
 
 /**
  * https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/
