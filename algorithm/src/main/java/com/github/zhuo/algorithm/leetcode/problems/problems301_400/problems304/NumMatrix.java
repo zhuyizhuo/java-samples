@@ -11,6 +11,9 @@ package com.github.zhuo.algorithm.leetcode.problems.problems301_400.problems304;
 public class NumMatrix {
     int[][] sums;
 
+    /**
+     * 一维前缀和 先计算每行的子数组和
+     */
     public NumMatrix(int[][] matrix) {
         int m = matrix.length;
         if (m > 0) {
@@ -25,13 +28,13 @@ public class NumMatrix {
     }
 
     /**
-     * TODO 待整理 待优化
      * 执行用时： 15 ms , 在所有 Java 提交中击败了 60.40% 的用户
      * 内存消耗： 44.2 MB , 在所有 Java 提交中击败了 15.48% 的用户
      */
     public int sumRegion(int row1, int col1, int row2, int col2) {
         int sum = 0;
         for (int i = row1; i <= row2; i++) {
+            //
             sum += sums[i][col2 + 1] - sums[i][col1];
         }
         return sum;

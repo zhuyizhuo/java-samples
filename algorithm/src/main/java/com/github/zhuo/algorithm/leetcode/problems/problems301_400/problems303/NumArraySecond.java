@@ -18,6 +18,10 @@ public class NumArraySecond {
     private int[] nums;
     private int[] sums;
 
+    /**
+     * 预先计算每行前X个元素的和
+     * @param nums
+     */
     public NumArraySecond(int[] nums) {
         this.nums = nums;
         sums = new int[nums.length];
@@ -30,6 +34,7 @@ public class NumArraySecond {
 
     /**
      * 预处理法 前缀和算法
+     * 求 i 下标到 j 下标的元素和 ，即 j 下标的元素总和减去 i 下标的元素总和加上 i 下标的元素。
      *
      * 执行用时： 10 ms , 在所有 Java 提交中击败了 76.97% 的用户
      * 内存消耗： 41.4 MB , 在所有 Java 提交中击败了 40.22% 的用户
