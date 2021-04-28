@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems665;
+package com.github.zhuo.algorithm.leetcode.problems.problems601_700.problems665;
 
 /**
  * https://leetcode-cn.com/problems/non-decreasing-array/

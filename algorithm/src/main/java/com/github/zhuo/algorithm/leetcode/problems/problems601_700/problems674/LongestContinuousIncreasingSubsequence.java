@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems674;
+package com.github.zhuo.algorithm.leetcode.problems.problems601_700.problems674;
 
 /**
  * https://leetcode.com/problems/longest-continuous-increasing-subsequence/

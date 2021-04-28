@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems697;
+package com.github.zhuo.algorithm.leetcode.problems.problems601_700.problems697;
 
 import java.util.HashMap;
 import java.util.Map;

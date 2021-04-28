@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems643;
+package com.github.zhuo.algorithm.leetcode.problems.problems601_700.problems643;
 
 /**
  * https://leetcode-cn.com/problems/maximum-average-subarray-i/
