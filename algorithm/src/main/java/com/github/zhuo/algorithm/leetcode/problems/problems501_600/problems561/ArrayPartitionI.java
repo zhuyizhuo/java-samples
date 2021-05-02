@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems561;
+package com.github.zhuo.algorithm.leetcode.problems.problems501_600.problems561;
 
 import java.util.Arrays;
 

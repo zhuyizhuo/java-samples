@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems566;
+package com.github.zhuo.algorithm.leetcode.problems.problems501_600.problems566;
 
 /**
  * https://leetcode-cn.com/problems/reshape-the-matrix/

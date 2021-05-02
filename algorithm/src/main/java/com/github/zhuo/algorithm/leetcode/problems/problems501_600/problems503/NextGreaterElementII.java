@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems503;
+package com.github.zhuo.algorithm.leetcode.problems.problems501_600.problems503;
 
 import java.util.Arrays;
 import java.util.Deque;
