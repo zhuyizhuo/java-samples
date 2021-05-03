@@ -4,9 +4,15 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems7;
 /**
  * https://leetcode.com/problems/reverse-integer/
  *
- * Given a 32-bit signed integer, reverse digits of an integer.
+ * 整数反转
+ * 难度 简单
  *
- * Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For this problem, assume that your function returns 0 when the reversed integer overflows.
+ * 给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。
+ *
+ * 如果反转后整数超过 32 位的有符号整数的范围 [−2^31,  2^31 − 1]，就返回 0。
+ *
+ * 假设环境不允许存储 64 位整数（有符号或无符号）。
+ *
  *
  * Example 1:
  *
@@ -29,9 +35,8 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems7;
  * Output: 0
  *
  *
- * Constraints:
- *
- * -2^31 <= x <= 2^31 - 1
+ * 提示：
+ *  -2^31 <= x <= 2^31 - 1
  */
 public class ReverseInteger {
 
@@ -43,6 +48,7 @@ public class ReverseInteger {
 
     /**
      * 转字符串反转解法
+     * 执行用时: 4 ms
      */
     public static int reverse(int x) {
         if (x == Integer.MIN_VALUE){
