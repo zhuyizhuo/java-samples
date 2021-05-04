@@ -26,7 +26,8 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems33;
 public class SearchInRotatedSortedArray {
 
     public static void main(String[] args) {
-        //todo 需优化时间复杂度
+        System.out.println(search(new int[]{1,2,3,4,5}, 6));
+        System.out.println(search(new int[]{1,2,3,4,5}, 3));
     }
 
     /**
@@ -35,7 +36,7 @@ public class SearchInRotatedSortedArray {
      * 内存消耗: 37.9 MB
      * O(n) 复杂度
      */
-    public int search(int[] nums, int target) {
+    public static int search(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target){
                 return i;
