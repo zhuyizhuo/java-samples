@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems1780;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1780;
 
 /**
  * https://leetcode-cn.com/problems/check-if-number-is-a-sum-of-powers-of-three/

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems1786;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1786;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;

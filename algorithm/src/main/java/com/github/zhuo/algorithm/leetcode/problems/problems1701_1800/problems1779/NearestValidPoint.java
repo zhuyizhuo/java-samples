@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems1779;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1779;
 
 /**
  * https://leetcode-cn.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/

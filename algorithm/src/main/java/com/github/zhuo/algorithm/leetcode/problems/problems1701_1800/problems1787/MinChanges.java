@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems1787;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1787;
 
 /**
  * https://leetcode-cn.com/problems/make-the-xor-of-all-segments-equal-to-zero/

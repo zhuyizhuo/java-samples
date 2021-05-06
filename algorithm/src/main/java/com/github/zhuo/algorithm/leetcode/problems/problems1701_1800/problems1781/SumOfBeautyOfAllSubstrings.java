@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems1781;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1781;
 
 /**
  * https://leetcode-cn.com/problems/sum-of-beauty-of-all-substrings/
