@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems485;
+package com.github.zhuo.algorithm.leetcode.problems.problems401_500.problems485;
 
 /**
  * https://leetcode-cn.com/problems/max-consecutive-ones/

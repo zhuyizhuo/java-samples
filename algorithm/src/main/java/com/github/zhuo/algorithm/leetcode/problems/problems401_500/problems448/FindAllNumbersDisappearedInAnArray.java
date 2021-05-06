@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems448;
+package com.github.zhuo.algorithm.leetcode.problems.problems401_500.problems448;
 
 import java.util.ArrayList;
 import java.util.List;

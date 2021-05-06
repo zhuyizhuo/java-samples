@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems424;
+package com.github.zhuo.algorithm.leetcode.problems.problems401_500.problems424;
 
 /**
  * https://leetcode-cn.com/problems/longest-repeating-character-replacement/

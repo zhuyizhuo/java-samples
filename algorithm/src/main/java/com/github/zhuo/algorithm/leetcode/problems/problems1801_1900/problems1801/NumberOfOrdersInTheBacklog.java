@@ -1,10 +1,15 @@
-package com.github.zhuo.algorithm.weekly.problems5710;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1801;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Solution {
+/**
+ * https://leetcode-cn.com/problems/number-of-orders-in-the-backlog/
+ * 积压订单中的订单总数
+ * 难度 中等
+ */
+public class NumberOfOrdersInTheBacklog {
 
     public static void main(String[] args) {
         //999999984
