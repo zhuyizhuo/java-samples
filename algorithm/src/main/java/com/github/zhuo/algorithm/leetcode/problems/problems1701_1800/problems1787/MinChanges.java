@@ -33,6 +33,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
 public class MinChanges {
 
     public int minChanges(int[] nums, int k) {
+
         return 0;
     }
 }

@@ -1,9 +1,10 @@
 package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems5;
 
 /**
- * https://leetcode.com/problems/longest-palindromic-substring/
+ * https://leetcode-cn.com/problems/longest-palindromic-substring/
  *
- *  Given a string s, return the longest palindromic substring in s.
+ * 最长回文子串
+ * 难度 中等
  *
  * Example 1:
  * Input: s = "babad"
@@ -22,11 +23,9 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems5;
  * Input: s = "ac"
  * Output: "a"
  *
- *
- * Constraints:
- *
- * 1 <= s.length <= 1000
- * s consist of only digits and English letters (lower-case and/or upper-case),
+ * 提示:
+ *   1 <= s.length <= 1000
+ *   s 仅由数字和英文字母（大写和/或小写）组成
  */
 public class LongestPalindrome {
 
@@ -37,7 +36,10 @@ public class LongestPalindrome {
 
     /**
      * 返回给定字符串中最长的回文串
-     * 普通解法 时间复杂度 O(n^2) 空间复杂度 O(n)
+     * 普通解法
+     *  预处理字符串，从每个字符向两边迭代查找回文串，
+     * 时间复杂度 O(n^2) 空间复杂度 O(n)
+     * 执行用时: 50 ms 超过 67%
      * @param s 给定的字符串
      * @return 给定的字符串中最长的回文串
      */

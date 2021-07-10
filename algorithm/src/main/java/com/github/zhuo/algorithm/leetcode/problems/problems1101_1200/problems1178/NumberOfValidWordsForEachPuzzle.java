@@ -9,6 +9,7 @@ import java.util.Map;
  * https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/
  *
  * 猜字谜
+ * 难度 困难
  * 
  * 外国友人仿照中国字谜设计了一个英文版猜字谜小游戏，请你来猜猜看吧。
  *
