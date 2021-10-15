@@ -1,5 +1,5 @@
-# java-samples
+# java-samples 代码示例
 - java-spi
 - java-agent
-- basic-samples 代码示例
+- basic-samples jdk 代码示例
 - algorithm  leetcode 题解
