@@ -33,13 +33,18 @@ public class TreeNodeUtil {
         int index = 1;
         while (!queue.isEmpty() && index < params.length){
             TreeNode poll = queue.poll();
-            Object param = params[index++];
+            Object param = params[index];
+            index++;
             if (param != null){
                 poll.left = new TreeNode();
                 poll.left.val = (int) param;
                 queue.add(poll.left);
             }
-            param = params[index++];
+            if (index >= params.length){
+                break;
+            }
+            param = params[index];
+            index++;
             if (param != null){
                 poll.right = new TreeNode();
                 poll.right.val = (int) param;
@@ -81,7 +86,7 @@ public class TreeNodeUtil {
                 totalNullCount *= 2;
                 // 上一层有空数据 本层减少打印量
                 if (nullCount > 0){
-                    totalNullCount += Math.pow(2, nullCount);
+                    totalNullCount += 2 * nullCount;
                     nullCount = 0;
                 }
             }
