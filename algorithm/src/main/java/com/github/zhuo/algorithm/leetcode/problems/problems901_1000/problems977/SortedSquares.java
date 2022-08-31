@@ -20,6 +20,47 @@ public class SortedSquares {
     /**
      * 双指针 依次放入
      * 由于该题强调了非递减  理解为 递增或者有相等的值 如果是递增数组 该题可以去掉最后一个 else
+     *
+     * 执行用时： 1 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 43 MB , 在所有 Java 提交中击败了 65.08% 的用户
+     * 通过测试用例： 137 / 137
+     */
+    public static int[] sortedSquares1(int[] nums) {
+        int[] rtn = new int[nums.length];
+        int start = 0;
+        int n = nums.length - 1;
+        int end = nums.length - 1;
+        while (start <= end){
+            int leftPow = nums[start] * nums[start];
+            int rightPow = nums[end] * nums[end];
+            if (leftPow > rightPow){
+                rtn[n] = leftPow;
+                n--;
+                start++;
+            } else if (leftPow < rightPow){
+                rtn[n] = rightPow;
+                n--;
+                end--;
+            } else {
+                rtn[n] = leftPow;
+                n--;
+                if (start == end){
+                    break;
+                }
+                start++;
+                rtn[n] = rightPow;
+                n--;
+                end--;
+            }
+        }
+        return rtn;
+    }
+
+    /**
+     * 双指针 依次放入
+     * 由于该题强调了非递减  理解为 递增或者有相等的值 如果是递增数组 该题可以去掉最后一个 else
+     *
+     * 执行用时：2ms
      */
     public static int[] sortedSquares(int[] nums) {
         int[] rtn = new int[nums.length];
