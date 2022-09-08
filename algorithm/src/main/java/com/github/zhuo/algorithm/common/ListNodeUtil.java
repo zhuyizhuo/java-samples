@@ -3,7 +3,7 @@ package com.github.zhuo.algorithm.common;
 public class ListNodeUtil {
 
     public static void main(String[] args) {
-        Integer[] s = {1,2,3,4,5};
+        int[] s = {1,2,3,4,5};
         ListNode node = createListNode(s);
         System.out.println("构造成功");
     }
@@ -11,7 +11,7 @@ public class ListNodeUtil {
     /**
      * 单链表构造
      */
-    public static ListNode createListNode(Integer[] s) {
+    public static ListNode createListNode(int[] s) {
         ListNode head = new ListNode();
         ListNode tail = head;
         for (int i = 0; i < s.length; i++) {

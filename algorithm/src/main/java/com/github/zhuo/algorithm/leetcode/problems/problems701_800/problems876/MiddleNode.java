@@ -17,11 +17,11 @@ import com.github.zhuo.algorithm.common.ListNodeUtil;
 public class MiddleNode {
 
     public static void main(String[] args) {
-        ListNode listNode = ListNodeUtil.createListNode(new Integer[]{1, 2, 3, 4, 5});
-//        ListNode listNode = ListNodeUtil.createListNode(new Integer[]{1,2,3,4,5,6});
-//        ListNode listNode = ListNodeUtil.createListNode(new Integer[]{1});
-//        ListNode listNode = ListNodeUtil.createListNode(new Integer[]{1, 2});
-//        ListNode listNode = ListNodeUtil.createListNode(new Integer[]{1, 2, 3});
+        ListNode listNode = ListNodeUtil.createListNode(new int[]{1, 2, 3, 4, 5});
+//        ListNode listNode = ListNodeUtil.createListNode(new int[]{1,2,3,4,5,6});
+//        ListNode listNode = ListNodeUtil.createListNode(new int[]{1});
+//        ListNode listNode = ListNodeUtil.createListNode(new int[]{1, 2});
+//        ListNode listNode = ListNodeUtil.createListNode(new int[]{1, 2, 3});
         ListNode listNode1 = middleNode(listNode);
         System.out.println("完成");
         while (listNode1 != null){
