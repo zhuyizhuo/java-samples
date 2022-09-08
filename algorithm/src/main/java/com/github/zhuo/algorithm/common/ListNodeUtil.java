@@ -8,6 +8,9 @@ public class ListNodeUtil {
         System.out.println("构造成功");
     }
 
+    /**
+     * 单链表构造
+     */
     public static ListNode createListNode(Integer[] s) {
         ListNode head = new ListNode();
         ListNode tail = head;
