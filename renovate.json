@@ -1,5 +1,8 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "platformAutomerge": false,
+  "automerge": false,
+  "enabled": false
 }

@@ -4,7 +4,6 @@ package com.github.zhuo.algorithm.leetcode.problems.problems3000_4000.problems35
 /**
  * @description:
  * @author: zhuo
- * @date: 2025-09-04 19:30
  */
 public class FindClosest {
 
