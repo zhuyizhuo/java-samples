@@ -3,10 +3,10 @@
 
 ## 项目结构
 
-- [algorithm](#algorithm) - 算法实现和LeetCode题解
-- [basic-samples](#basic-samples) - Java基础代码示例
-- [java-agent](#java-agent) - Java Agent技术示例
-- [java-spi](#java-spi) - Java SPI机制示例
+- [algorithm](algorithm/README.md) - 算法实现和LeetCode题解
+- [basic-samples](basic-samples/README.md) - Java基础代码示例
+- [java-agent](java-agent/README.md) - Java Agent技术示例
+- [java-spi](java-spi/README.md) - Java SPI机制示例
 
 ## 模块详情
 
