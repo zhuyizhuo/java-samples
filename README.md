@@ -4,7 +4,6 @@
 ## 项目结构
 
 - [algorithm](algorithm/README.md) - 算法实现和LeetCode题解
-- [basic-samples](basic-samples/README.md) - Java基础代码示例
 - [java-agent](java-agent/README.md) - Java Agent技术示例
 - [java-spi](java-spi/README.md) - Java SPI机制示例
 
@@ -20,12 +19,6 @@
 - **常用限流算法** - 包含滑动窗口协议、漏桶、令牌桶、计数器
 - **数字压缩算法** - 如zigzag编码
 - **散列算法** - 如MD5、SHA1、SHA256、SHA512等
-
-### basic-samples
-
-Java基础API的使用示例。
-
-- Java8 API Predicate的各种使用方式示例
 
 ### java-agent
 
