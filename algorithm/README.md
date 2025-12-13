@@ -105,4 +105,4 @@ mvn test
 
 ## 许可证
 
-[MIT License](https://github.com/zhuyizhuo/java-samples/blob/master/LICENSE)
+[Apache License 2.0](../LICENSE)
