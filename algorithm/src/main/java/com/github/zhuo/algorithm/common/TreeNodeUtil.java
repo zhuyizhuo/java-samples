@@ -18,12 +18,11 @@ public class TreeNodeUtil {
      * @return 二叉树头节点
      */
     public static TreeNode levelCreateBinaryTree(Object[] params) {
-        TreeNode treeNode = new TreeNode();
         if (params.length == 0 || params[0] == null){
-            return treeNode;
+            return null;
         }
-        Queue<TreeNode> queue = new LinkedList();
-        treeNode.val = (int)params[0];
+        TreeNode treeNode = new TreeNode((int)params[0]);
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(treeNode);
         levelCreateBinaryTree(params, queue);
         return treeNode;
@@ -54,54 +53,49 @@ public class TreeNodeUtil {
     }
 
     /**
-     * 层数打印二叉树 TODO 如果有 null 值 则下一层数据换行打印有误
+     * 层数打印二叉树
      * @param treeNode
      */
     public static void levelPrintBinaryTree(TreeNode treeNode) {
-        if(treeNode == null || treeNode.val == 0){
+        if(treeNode == null){
             return;
         }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(treeNode);
-        // 层数
-        int level = 0;
-        // 每层打印数
-        double count = 0;
-        // 每层应打印数
-        double totalCount = 1;
-        // 每层的空值数
-        int nullCount = 0;
-        // 每层应减少打印的数量
-        int totalNullCount = 0;
-        while (!queue.isEmpty()){
-            if (totalCount - totalNullCount == count){
-                System.out.println();
-                // 下一层
-                level ++;
-                // 每层应打印数
-                totalCount = Math.pow(2, level);
-                // 本层打印数
-                count = 0;
-                // 如果有空值 则按层数2倍放大减少打印量
-                totalNullCount *= 2;
-                // 上一层有空数据 本层减少打印量
-                if (nullCount > 0){
-                    totalNullCount += 2 * nullCount;
-                    nullCount = 0;
+        
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size(); // 当前层的节点数量
+            
+            // 打印当前层的所有节点
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode current = queue.poll();
+                
+                if (current != null) {
+                    System.out.print(current.val + " ");
+                    // 将左右子节点加入队列，即使它们是null
+                    queue.add(current.left);
+                    queue.add(current.right);
+                } else {
+                    System.out.print("null ");
+                    // 空节点的左右子节点也是null，但我们仍然需要加入队列以保持层级结构
+                    queue.add(null);
+                    queue.add(null);
                 }
             }
-            TreeNode poll = queue.poll();
-            if (poll != null){
-                System.out.print(poll.val + " ");
-                TreeNode left = poll.left;
-                queue.add(left);
-                TreeNode right = poll.right;
-                queue.add(right);
-            } else {
-                System.out.print(" null ");
-                nullCount++;
+            
+            System.out.println(); // 换行到下一层
+            
+            // 检查队列是否只包含null，如果是则退出循环
+            boolean allNull = true;
+            for (TreeNode node : queue) {
+                if (node != null) {
+                    allNull = false;
+                    break;
+                }
             }
-            count++;
+            if (allNull) {
+                break;
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.github.zhuo.algorithm.demo;
 
-public class Test {
+public class SwitchAB {
     public static void main(String[] args) {
         int a = 900;
         int b = 2;
