@@ -1,11 +1,11 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems3000_4000.problems3516;
+package com.github.zhuo.algorithm.leetcode.problems.problems3000_4000;
 
 
 /**
  * @description:
  * @author: zhuo
  */
-public class FindClosest {
+public class Solution3516 {
 
     public static void main(String[] args) {
         System.out.println(findClosest(2,7,4));
