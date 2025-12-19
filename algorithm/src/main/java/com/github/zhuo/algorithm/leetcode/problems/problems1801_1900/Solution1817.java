@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1817;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ import java.util.Map;
  * k 的取值范围是 [用户的最大用户活跃分钟数, 10^5]
  *
  */
-public class FindingTheUsersActiveMinutes {
+public class Solution1817 {
 
     public static void main(String[] args) {
         int[] ints = findingUsersActiveMinutes(new int[][]{{0, 5}, {1, 2}, {0, 2}, {0, 5}, {1, 3}}, 5);

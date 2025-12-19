@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1860;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 //增长的内存泄露
 
@@ -19,7 +19,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  *
  *  0 <= memory1, memory2 <= 2^31 - 1
  */
-public class IncrementalMemoryLeak {
+public class Solution1860 {
 
     public static void main(String[] args) {
 //        int[] ints = memLeak(2, 2);

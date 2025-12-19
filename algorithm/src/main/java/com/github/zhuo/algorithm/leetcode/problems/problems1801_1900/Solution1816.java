@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1816;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/truncate-sentence/
@@ -44,7 +44,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * 不存在前导或尾随空格
  *
  */
-public class Solution {
+public class Solution1816 {
 
     public static void main(String[] args) {
         System.out.println(truncateSentence("Hello how are you Contestant", 4));

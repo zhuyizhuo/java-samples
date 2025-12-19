@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1818;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/minimum-absolute-sum-difference/
@@ -18,7 +18,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * 如果 x <= 0 ，值为 -x
  *
  */
-public class MinimumAbsoluteSumDifference {
+public class Solution1818 {
 
     public static void main(String[] args) {
         System.out.println(minAbsoluteSumDiff(new int[]{1,7,5}, new int[]{2,3,5}));

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1855;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/maximum-distance-between-a-pair-of-values/
@@ -22,7 +22,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * nums1 和 nums2 都是 非递增 数组
  *
  */
-public class MaximumDistanceBetweenAPairOfValues {
+public class Solution1855 {
 
     public static void main(String[] args) {
         System.out.println(maxDistance(new int[]{55,30,5,4,2}, new int[]{100,20,10,10,5}));

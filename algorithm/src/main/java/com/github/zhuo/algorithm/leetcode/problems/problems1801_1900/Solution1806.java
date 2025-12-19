@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1806;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.Arrays;
 
@@ -22,7 +22,7 @@ import java.util.Arrays;
  * 2 <= n <= 1000
  * n 是一个偶数
  */
-public class ReinitializePermutation {
+public class Solution1806 {
 
     public static void main(String[] args) {
         //TODO 待补充题解

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1856;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/maximum-subarray-min-product/
@@ -19,7 +19,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * 1 <= nums.length <= 10^5
  * 1 <= nums[i] <= 10^7
  */
-public class MaximumSubarrayMinProduct {
+public class Solution1856 {
 
     public static void main(String[] args) {
 //        System.out.println(maxSumMinProduct(new int[]{1,2,3,2}));

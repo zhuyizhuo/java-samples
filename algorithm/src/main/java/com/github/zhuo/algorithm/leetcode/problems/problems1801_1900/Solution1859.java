@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1859;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/sorting-the-sentence/
@@ -21,7 +21,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * s 不包含任何前导或者后缀空格。
  *
  */
-public class SortingTheSentence {
+public class Solution1859 {
 
     public static void main(String[] args) {
         System.out.println(sortSentence("Myself2 Me1 I4 and3"));

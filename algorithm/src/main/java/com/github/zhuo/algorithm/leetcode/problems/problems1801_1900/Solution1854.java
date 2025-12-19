@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1854;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/maximum-population-year/
@@ -15,7 +15,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * 1 <= logs.length <= 100
  * 1950 <= birthi < deathi <= 2050
  */
-public class MaximumPopulationYear {
+public class Solution1854 {
 
     public static void main(String[] args) {
         System.out.println(maximumPopulation(new int[][]{{1993,1999}, {2000,2010}}));

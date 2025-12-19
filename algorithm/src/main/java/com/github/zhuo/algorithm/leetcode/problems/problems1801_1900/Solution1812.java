@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1812;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 /**
  * https://leetcode-cn.com/problems/determine-color-of-a-chessboard-square/
@@ -42,7 +42,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems18
  * '1' <= coordinates[1] <= '8'
  *
  */
-public class Solution {
+public class Solution1812 {
 
     public static void main(String[] args) {
         System.out.println(squareIsWhite("a1"));

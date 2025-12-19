@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1801;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.TreeMap;
  * 积压订单中的订单总数
  * 难度 中等
  */
-public class NumberOfOrdersInTheBacklog {
+public class Solution1801 {
 
     public static void main(String[] args) {
         //999999984

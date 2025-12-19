@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1805;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,7 +21,7 @@ import java.util.Set;
  * 1 <= word.length <= 1000
  * word 由数字和小写英文字母组成
  */
-public class NumDifferentIntegers {
+public class Solution1805 {
 
     public static void main(String[] args) {
         System.out.println(numDifferentIntegers("a123bc34d8ef34"));

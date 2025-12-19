@@ -1,10 +1,10 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1813;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.Arrays;
 import java.util.List;
 
 
-public class Solution {
+public class Solution1813 {
 
     public static void main(String[] args) {
 //        System.out.println(areSentencesSimilar("My name is Haley", "My Haley"));

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1861;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.Arrays;
 
@@ -27,7 +27,7 @@ import java.util.Arrays;
  * box[i][j] 只可能是 '#' ，'*' 或者 '.' 。
  *
  */
-public class RotatingTheBox {
+public class Solution1861 {
 
     public static void main(String[] args) {
 //        char[][] chars = rotateTheBox(new char[][]{{'#', '.', '*', '.'}, {'#', '#', '*', '.'}});

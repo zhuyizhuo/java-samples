@@ -1,6 +1,6 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1864;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
-public class MinSwaps {
+public class Solution1864 {
 
     public static void main(String[] args) {
         //1

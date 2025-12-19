@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1862;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 1 <= nums.length <= 10^5
  * 1 <= nums[i] <= 10^5
  */
-public class SumOfFlooredPairs {
+public class Solution1862 {
 
     public static void main(String[] args) {
         //TODO

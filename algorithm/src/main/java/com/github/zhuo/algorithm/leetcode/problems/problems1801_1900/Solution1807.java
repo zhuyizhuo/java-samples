@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900.problems1807;
+package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import java.util.Map;
  * knowledge 中的 keyi 不会重复。
  *
  */
-public class EvaluateTheBracketPairsOfAString {
+public class Solution1807 {
 
     public static void main(String[] args) {
 //        List<List<String>> list = getList(new String[][]{{"name","bob"},{"age","two"}});
