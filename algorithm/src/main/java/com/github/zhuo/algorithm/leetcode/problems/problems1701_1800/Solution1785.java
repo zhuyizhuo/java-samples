@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1785;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/minimum-elements-to-add-to-form-a-given-sum/
@@ -28,7 +28,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * -limit <= nums[i] <= limit
  * -10^9 <= goal <= 10^9
  */
-public class MinElements {
+public class Solution1785 {
 
     public static void main(String[] args) {
 //        System.out.println(minElements(new int[]{1,-1,1}, 3, -4));

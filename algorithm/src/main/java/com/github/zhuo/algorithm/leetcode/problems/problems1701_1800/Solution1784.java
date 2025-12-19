@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1784;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/
@@ -14,7 +14,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * s[i] 为 '0' 或 '1'
  * s[0] 为 '1'
  */
-public class CheckOnesSegment {
+public class Solution1784 {
 
     public static void main(String[] args) {
         System.out.println(checkOnesSegment("1001"));

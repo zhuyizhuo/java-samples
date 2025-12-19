@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1734;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/decode-xored-permutation/
@@ -11,7 +11,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  *
  * 给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
  */
-public class DecodeXORedPermutation {
+public class Solution1734 {
 
     public static void main(String[] args) {
 //        int[] decode = decode(new int[]{3, 1});

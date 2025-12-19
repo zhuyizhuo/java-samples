@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1780;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/check-if-number-is-a-sum-of-powers-of-three/
@@ -26,7 +26,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * 提示：
  *   1 <= n <= 10^7
  */
-public class CheckPowersOfThree {
+public class Solution1780 {
 
     public static void main(String[] args) {
         System.out.println(checkPowersOfThree(12));

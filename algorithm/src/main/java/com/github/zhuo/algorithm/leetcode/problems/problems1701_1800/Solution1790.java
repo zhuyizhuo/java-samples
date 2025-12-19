@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1790;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal/
@@ -36,7 +36,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * s1 和 s2 仅由小写英文字母组成
  *
  */
-public class Solution {
+public class Solution1790 {
 
     public static void main(String[] args) {
         System.out.println(areAlmostEqual("bank", "kanb"));

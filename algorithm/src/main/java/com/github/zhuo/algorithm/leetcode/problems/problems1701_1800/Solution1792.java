@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1792;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/maximum-average-pass-ratio/
@@ -21,7 +21,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * 1 <= extraStudents <= 10^5
  *
  */
-public class Solution {
+public class Solution1792 {
     public static void main(String[] args) {
         //TODO 解法有误
 //        int[][] ints = {{2, 4}, {3, 9}, {4, 5}, {2, 10}};

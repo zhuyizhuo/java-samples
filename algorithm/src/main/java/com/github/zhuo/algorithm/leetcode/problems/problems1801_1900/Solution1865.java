@@ -42,7 +42,7 @@ public class Solution1865 {
     }
 
     public static void main(String[] args) {
-        FindSumPairs findSumPairs = new Solution1865(new int[]{1, 1, 2, 2, 2, 3}, new int[]{1, 4, 5, 2, 5, 4});
+        Solution1865 findSumPairs = new Solution1865(new int[]{1, 1, 2, 2, 2, 3}, new int[]{1, 4, 5, 2, 5, 4});
         System.out.println(findSumPairs.count(7));
         findSumPairs.add(3,2);
         System.out.println(findSumPairs.count(8));

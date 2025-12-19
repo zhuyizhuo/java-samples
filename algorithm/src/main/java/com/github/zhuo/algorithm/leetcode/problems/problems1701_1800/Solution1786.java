@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1786;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -41,7 +41,7 @@ import java.util.PriorityQueue;
  *
  * \i 表示下标为 i
  */
-public class CountRestrictedPaths {
+public class Solution1786 {
 
     //TODO 待研究
     public int countRestrictedPaths(int n, int[][] edges) {

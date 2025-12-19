@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1781;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/sum-of-beauty-of-all-substrings/
@@ -24,7 +24,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * 1 <= s.length <= 500
  * s 只包含小写英文字母。
  */
-public class SumOfBeautyOfAllSubstrings {
+public class Solution1781 {
 
     public static void main(String[] args) {
 

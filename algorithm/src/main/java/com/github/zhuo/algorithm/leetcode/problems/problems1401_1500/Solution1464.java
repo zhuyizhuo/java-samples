@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems1464;
+package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500;
 
 import java.util.Arrays;
 
@@ -10,7 +10,7 @@ import java.util.Arrays;
  * 请你计算并返回该式的最大值。
  *
  */
-public class MaxProduct {
+public class Solution1464 {
 
     public static void main(String[] args) {
 

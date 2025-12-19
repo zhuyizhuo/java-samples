@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1779;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/
@@ -15,7 +15,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * 两个点 (x1, y1) 和 (x2, y2) 之间的 曼哈顿距离 为 abs(x1 - x2) + abs(y1 - y2) 。
  *
  */
-public class NearestValidPoint {
+public class Solution1779 {
     public static void main(String[] args) {
         System.out.println(nearestValidPoint(3,4,new int[][]{{1,2},{3,1},{2,4},{2,3},{4,4}}));
         System.out.println(nearestValidPoint(3,4,new int[][]{{3,4}}));

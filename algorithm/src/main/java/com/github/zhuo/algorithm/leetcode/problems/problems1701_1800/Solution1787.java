@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1787;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/make-the-xor-of-all-segments-equal-to-zero/
@@ -30,7 +30,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * 1 <= k <= nums.length <= 2000
  * 0 <= nums[i] < 210
  */
-public class MinChanges {
+public class Solution1787 {
 
     public int minChanges(int[] nums, int k) {
 

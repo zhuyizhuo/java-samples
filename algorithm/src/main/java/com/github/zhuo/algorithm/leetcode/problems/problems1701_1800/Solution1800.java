@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1800;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/maximum-ascending-subarray-sum/
@@ -12,7 +12,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems18
  * 已知子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，若对所有 i（l <= i < r），numsi < numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为 1 的子数组也视作 升序 子数组。
  *
  */
-public class Solution {
+public class Solution1800 {
 
     public static void main(String[] args) {
         System.out.println(maxAscendingSum(new int[]{10,20,30,5,10,50}));

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems1438;
+package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -13,7 +13,7 @@ import java.util.LinkedList;
  * 如果不存在满足条件的子数组，则返回 0 。
  *
  */
-public class LongestSubarray {
+public class Solution1438 {
 
     public static void main(String[] args) {
         System.out.println(longestSubarray(new int[]{8,2,4,7}, 4));

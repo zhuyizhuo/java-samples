@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems1460;
+package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
  *  难度 简单
  *
  */
-public class CanBeEqual {
+public class Solution1460 {
 
     public static void main(String[] args) {
         int[] target = new int[]{1,2,3,4};

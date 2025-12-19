@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems1442;
+package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500;
 
 /**
  * https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/
@@ -18,7 +18,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems14
  * 请返回能够令 a == b 成立的三元组 (i, j , k) 的数目。
  *
  */
-public class CountTripletsThatCanFormTwoArraysOfEqualXOR {
+public class Solution1442 {
 
     public int countTriplets(int[] arr) {
 

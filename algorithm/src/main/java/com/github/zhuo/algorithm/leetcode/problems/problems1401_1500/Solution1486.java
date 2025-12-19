@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems1486;
+package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500;
 
 /**
  * https://leetcode-cn.com/problems/xor-operation-in-an-array/
@@ -29,7 +29,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems14
  *  0 <= start <= 1000
  *  n == nums.length
  */
-public class XOROperationInAnArray {
+public class Solution1486 {
 
     public static void main(String[] args) {
         System.out.println(xorOperation(5, 0));

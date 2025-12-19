@@ -3,7 +3,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1801_1900;
 public class Solution1863 {
 
     public static void main(String[] args) {
-        SumOfAllSubsetXORTotals test5759 = new Solution1863();
+        Solution1863 test5759 = new Solution1863();
         System.out.println(test5759.subsetXORSum(new int[]{1, 3}));
         System.out.println(test5759.subsetXORSum(new int[]{5, 1, 6}));
         System.out.println(test5759.subsetXORSum(new int[]{3, 4, 5, 6, 7, 8}));

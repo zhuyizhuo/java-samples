@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500.problems1418;
+package com.github.zhuo.algorithm.leetcode.problems.problems1401_1500;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +21,7 @@ import java.util.TreeMap;
  * 注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。
  *
  */
-public class DisplayTable {
+public class Solution1418 {
 
     public static void main(String[] args) {
         List s = new ArrayList();

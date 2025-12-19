@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1720;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/decode-xored-array/
@@ -20,7 +20,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  *  0 <= encoded[i] <= 10^5
  *  0 <= first <= 10^5
  */
-public class DecodeXORedArray {
+public class Solution1720 {
 
     public static void main(String[] args) {
 //        int[] decode = decode(new int[]{1, 2, 3}, 1);

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1791;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 /**
  * https://leetcode-cn.com/problems/find-center-of-star-graph/
@@ -19,7 +19,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems17
  * ui != vi
  * 题目数据给出的 edges 表示一个有效的星型图
  */
-public class Solution {
+public class Solution1791 {
 
     public static void main(String[] args) {
         System.out.println(findCenter(new int[][]{{1,2},{2,3},{2,4}}));

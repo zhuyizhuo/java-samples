@@ -1,11 +1,11 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800.problems1733;
+package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 
 /**
  * @description:
  * @author: zhuo
  */
-public class MinimumTeachings {
+public class Solution1733 {
 
     public static void main(String[] args) {
 
