@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems3000_4000;
+package com.github.zhuo.algorithm.leetcode.problems.problems3601_3700;
 
 /**
  * 按策略买卖股票的最佳时机

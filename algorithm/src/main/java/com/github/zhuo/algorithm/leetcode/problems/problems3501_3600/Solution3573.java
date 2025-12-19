@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems3000_4000;
+package com.github.zhuo.algorithm.leetcode.problems.problems3501_3600;
 
 /**
  * 给你一个整数数组 prices，其中 prices[i] 是第 i 天股票的价格（美元），以及一个整数 k。

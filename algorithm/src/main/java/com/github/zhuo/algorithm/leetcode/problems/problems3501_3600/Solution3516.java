@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems3000_4000;
+package com.github.zhuo.algorithm.leetcode.problems.problems3501_3600;
 
 
 /**
