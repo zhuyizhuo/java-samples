@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400.problems1302;
+package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400;
 
 import com.github.zhuo.algorithm.common.TreeNode;
 import com.github.zhuo.algorithm.common.TreeNodeUtil;
@@ -17,7 +17,7 @@ import java.util.Queue;
  * 树中节点数目在范围 [1, 10^4] 之间。
  * 1 <= Node.val <= 100
  */
-public class DeepestLeavesSum {
+public class Solution1302 {
 
     public static void main(String[] args) {
         // 15

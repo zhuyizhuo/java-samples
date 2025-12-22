@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400.problems1319;
+package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  *
  */
-public class NumberOfOperationsToMakeNetworkConnected {
+public class Solution1319 {
 
     public static void main(String[] args) {
         // 并查集

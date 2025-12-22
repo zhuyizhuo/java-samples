@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400.problems1310;
+package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400;
 
 /**
  * https://leetcode-cn.com/problems/xor-queries-of-a-subarray/
@@ -19,7 +19,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400.problems13
  * 0 <= queries[i][0] <= queries[i][1] < arr.length
  *
  */
-public class XORQueriesOfASubarray {
+public class Solution1310 {
 
     public static void main(String[] args) {
 //        int[] x = xorQueries(new int[]{1,3,4,8}, new int[][]{{0,1},{1,2},{0,3},{3,3}});

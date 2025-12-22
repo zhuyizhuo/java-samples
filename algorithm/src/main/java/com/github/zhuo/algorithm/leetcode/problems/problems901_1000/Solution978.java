@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems978;
+package com.github.zhuo.algorithm.leetcode.problems.problems901_1000;
 
 /**
  * https://leetcode-cn.com/problems/longest-turbulent-subarray/
@@ -14,7 +14,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems978
  * 返回 A 的最大湍流子数组的长度。
  *
  */
-public class LongestTurbulentSubarray {
+public class Solution978 {
 
     public static void main(String[] args) {
         //5

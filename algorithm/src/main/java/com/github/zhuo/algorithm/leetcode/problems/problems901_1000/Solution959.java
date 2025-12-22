@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems959;
+package com.github.zhuo.algorithm.leetcode.problems.problems901_1000;
 
 /**
  * https://leetcode.com/problems/regions-cut-by-slashes/
@@ -6,7 +6,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems959
  * 每日一题
  *
  */
-public class RegionsCutBySlashes {
+public class Solution959 {
 
     public static void main(String[] args) {
         //TODO

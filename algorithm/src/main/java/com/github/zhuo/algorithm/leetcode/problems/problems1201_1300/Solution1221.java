@@ -1,10 +1,10 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1201_1300.problems1221;
+package com.github.zhuo.algorithm.leetcode.problems.problems1201_1300;
 
 /**
  * https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/
  * 分割平衡字符串
  */
-public class BalancedStringSplit {
+public class Solution1221 {
 
     public static void main(String[] args) {
         System.out.println(balancedStringSplit("RLRRLLRLRL"));

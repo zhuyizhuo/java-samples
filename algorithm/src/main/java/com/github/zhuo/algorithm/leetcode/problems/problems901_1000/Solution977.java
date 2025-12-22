@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems977;
+package com.github.zhuo.algorithm.leetcode.problems.problems901_1000;
 
 /**
  * https://leetcode.cn/problems/squares-of-a-sorted-array/
@@ -6,7 +6,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems977
  *
  * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
  */
-public class SortedSquares {
+public class Solution977 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{-4,-1,0,3,10};

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems989;
+package com.github.zhuo.algorithm.leetcode.problems.problems901_1000;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,7 +41,7 @@ import java.util.List;
  * 解释：9999999999 + 1 = 10000000000
  *
  */
-public class AddToArrayFormOfInteger {
+public class Solution989 {
 
     public static void main(String[] args) {
 //        int[] nums = new int[]{9,9,9,9,9,9,9,9,9,9};

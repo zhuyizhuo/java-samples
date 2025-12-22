@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1201_1300.problems1208;
+package com.github.zhuo.algorithm.leetcode.problems.problems1201_1300;
 
 /**
  * https://leetcode-cn.com/problems/get-equal-substrings-within-budget/
@@ -16,7 +16,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1201_1300.problems12
  * 如果 s 中没有子字符串可以转化成 t 中对应的子字符串，则返回 0。
  *
  */
-public class GetEqualSubstringsWithinBudget {
+public class Solution1208 {
 
     public static void main(String[] args) {
         //TODO 和 424 题相似

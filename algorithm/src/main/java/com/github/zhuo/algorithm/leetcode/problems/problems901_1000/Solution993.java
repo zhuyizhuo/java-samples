@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems993;
+package com.github.zhuo.algorithm.leetcode.problems.problems901_1000;
 
 /**
  * https://leetcode-cn.com/problems/cousins-in-binary-tree/
@@ -18,7 +18,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems901_1000.problems993
  * 二叉树的节点数介于 2 到 100 之间。
  * 每个节点的值都是唯一的、范围为 1 到 100 的整数。
  */
-public class CousinsInBinaryTree {
+public class Solution993 {
 
     public static void main(String[] args) {
 
