@@ -1,5 +1,10 @@
 package com.github.zhuo.algorithm.leetcode.problems.problems2001_2100;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 给你一个下标从 0 开始的二维整数数组 events ，其中 events[i] = [startTimei, endTimei, valuei] 。
  * 第 i 个活动开始于 startTimei ，结束于 endTimei ，如果你参加这个活动，那么你可以得到价值 valuei 。
@@ -19,13 +24,75 @@ package com.github.zhuo.algorithm.leetcode.problems.problems2001_2100;
  */
 public class Solution2054 {
 
-    public static void main(String[] args) {
-
-    }
-
     public int maxTwoEvents(int[][] events) {
-
-        return 0;
+        List<Event> evs = new ArrayList<>();
+        for (int[] event : events) {
+            evs.add(new Event(event[0], 0, event[2]));
+            evs.add(new Event(event[1], 1, event[2]));
+        }
+        Collections.sort(evs);
+        int ans = 0, bestFirst = 0;
+        for (Event event : evs) {
+            if (event.op == 0) {
+                ans = Math.max(ans, event.val + bestFirst);
+            } else {
+                bestFirst = Math.max(bestFirst, event.val);
+            }
+        }
+        return ans;
     }
 
+    class Event implements Comparable<Event> {
+        int ts;
+        int op;
+        int val;
+
+        Event(int ts, int op, int val) {
+            this.ts = ts;
+            this.op = op;
+            this.val = val;
+        }
+
+        @Override
+        public int compareTo(Event other) {
+            if (this.ts != other.ts) {
+                return Integer.compare(this.ts, other.ts);
+            }
+            return Integer.compare(this.op, other.op);
+        }
+    }
+
+}
+
+/**
+ * beats 100%
+ */
+class Solution {
+    public int maxTwoEvents(int[][] events) {
+        Arrays.sort(events,(a, b)->a[0]-b[0]);
+        int n = events.length;
+        int[] f = new int[n+1];
+        for(int i = n-1; i >= 0; i--){
+            f[i] = Math.max(f[i+1],events[i][2]);
+        }
+        int ans = 0;
+        for(int i = 0; i < n; i++){
+            int v = events[i][2];
+            int en = events[i][1];
+            int L = i,R = n;
+            while(L + 1 < R){
+                int mid = L + ((R-L)>>1);
+                if(events[mid][0] <= en){
+                    L = mid;
+                }else{
+                    R = mid;
+                }
+            }
+            if(R != n){
+                v += f[R];
+            }
+            ans = Math.max(ans,v);
+        }
+        return ans;
+    }
 }
