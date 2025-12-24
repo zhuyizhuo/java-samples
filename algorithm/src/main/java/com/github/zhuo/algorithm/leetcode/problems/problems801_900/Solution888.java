@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems888;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * 交换两个数组中的一个数字 保证数组中所有数字之和相等
  */
-public class FairCandySwap {
+public class Solution888 {
 
     public static void main(String[] args) {
         System.out.println(fairCandySwap(new int[]{1,1}, new int[]{2,2}));

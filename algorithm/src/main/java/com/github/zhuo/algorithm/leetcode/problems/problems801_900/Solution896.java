@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems896;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 /**
  * https://leetcode-cn.com/problems/monotonic-array/
@@ -13,7 +13,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems896;
  * 当给定的数组 A 是单调数组时返回 true，否则返回 false。
  *
  */
-public class MonotonicArray {
+public class Solution896 {
 
     public static void main(String[] args) {
         System.out.println(isMonotonic(new int[]{1,1,2,1}));

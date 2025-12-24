@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200.problems1143;
+package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200;
 
 /**
  * https://leetcode-cn.com/problems/longest-common-subsequence/
@@ -16,7 +16,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200.problems11
  * 1 <= text1.length, text2.length <= 1000
  * text1 和 text2 仅由小写英文字符组成。
  */
-public class LongestCommonSubsequence {
+public class Solution1143 {
 
     public static void main(String[] args) {
         System.out.println(longestCommonSubsequence("abcde","ace"));

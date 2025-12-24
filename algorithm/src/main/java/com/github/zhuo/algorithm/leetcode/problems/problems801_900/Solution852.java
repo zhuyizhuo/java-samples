@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems852;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 /**
  * https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/
@@ -18,7 +18,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems852;
  * 0 <= arr[i] <= 106
  * 题目数据保证 arr 是一个山脉数组
  */
-public class PeakIndexInAMountainArray {
+public class Solution852 {
 
     public static void main(String[] args) {
 

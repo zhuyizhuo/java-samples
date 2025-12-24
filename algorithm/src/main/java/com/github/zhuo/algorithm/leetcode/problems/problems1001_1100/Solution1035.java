@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems1035;
+package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100;
 
 /**
  * https://leetcode-cn.com/problems/uncrossed-lines/
@@ -20,9 +20,9 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems10
  * 1 <= nums2.length <= 500
  * 1 <= nums1[i], nums2[i] <= 2000
  */
-public class UncrossedLines {
+public class Solution1035 {
 
-    public int maxUncrossedLines(int[] nums1, int[] nums2) {
+    public int maxSolution1035(int[] nums1, int[] nums2) {
         //todo
         return 0;
     }

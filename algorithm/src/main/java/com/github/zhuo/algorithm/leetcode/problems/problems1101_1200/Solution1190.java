@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200.problems1190;
+package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200;
 
 /**
  * https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/
@@ -35,7 +35,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200.problems11
  * 我们确保所有括号都是成对出现的
  *
  */
-public class ReverseSubstringsBetweenEachPairOfParentheses {
+public class Solution1190 {
 
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems1006;
+package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -19,7 +19,7 @@ import java.util.LinkedList;
  * 实现上面定义的笨函数：给定一个整数 N，它返回 N 的笨阶乘。
  *
  */
-public class ClumsyFactorial {
+public class Solution1006 {
 
     public static void main(String[] args) {
 //        System.out.println(clumsy(4));
@@ -106,4 +106,31 @@ public class ClumsyFactorial {
         return result;
     }
 
+}
+
+class Solution {
+
+    /**
+     * 公式推导法 总结规律
+     * 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+     * 内存消耗： 35.2 MB , 在所有 Java 提交中击败了 64.52% 的用户
+     */
+    public int clumsy(int N) {
+        if (N == 1){
+            return 1;
+        } else if (N == 2){
+            return 2;
+        } else if (N == 3){
+            return 6;
+        } else if (N == 4){
+            return 7;
+        }
+        if (N % 4 == 0){
+            return N + 1;
+        } else if (N % 4 <= 2){
+            return N + 2;
+        } else {
+            return N - 1;
+        }
+    }
 }

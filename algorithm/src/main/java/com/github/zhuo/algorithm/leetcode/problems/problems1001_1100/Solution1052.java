@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems1052;
+package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100;
 
 /**
  * https://leetcode-cn.com/problems/grumpy-bookstore-owner/
@@ -27,7 +27,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems10
  *  0 <= grumpy[i] <= 1
  *
  */
-public class GrumpyBookstoreOwner {
+public class Solution1052 {
 
     public static void main(String[] args) {
         System.out.println(maxSatisfied(new int[]{1,0,1,2,1,1,7,5}, new int[]{0,1,0,1,0,1,0,1}, 3));

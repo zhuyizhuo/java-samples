@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems859;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 /**
  * https://leetcode-cn.com/problems/buddy-strings/
@@ -17,10 +17,10 @@ package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems859;
  * s 和 goal 由小写英文字母组成
  *
  */
-public class BuddyStrings {
+public class Solution859 {
 
     public static void main(String[] args) {
-        BuddyStrings buddyStrings = new BuddyStrings();
+        Solution859 buddyStrings = new Solution859();
         System.out.println(buddyStrings.budyStrings("ab", "ba"));
         System.out.println(buddyStrings.budyStrings("ab", "ab"));
     }

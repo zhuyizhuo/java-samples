@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems872;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
  *  给定的两棵树上的值介于 0 到 200 之间。
  *
  */
-public class LeafSimilarTrees {
+public class Solution872 {
 
     public static void main(String[] args) {
 //        System.out.println(leafSimilar(tree, tree1));

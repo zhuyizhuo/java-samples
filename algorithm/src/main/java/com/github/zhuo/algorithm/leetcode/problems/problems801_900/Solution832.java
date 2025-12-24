@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems832;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 /**
  * https://leetcode-cn.com/problems/flipping-an-image/
@@ -34,7 +34,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems832;
  * 1 <= A.length = A[0].length <= 20
  * 0 <= A[i][j] <= 1
  */
-public class FlippingAnImage {
+public class Solution832 {
 
     public static void main(String[] args) {
         int[][] ints = flipAndInvertImage(new int[][]{{1, 1, 0}, {1, 0, 1}, {0, 0, 0}});

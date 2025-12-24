@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200.problems1128;
+package com.github.zhuo.algorithm.leetcode.problems.problems1101_1200;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ import java.util.Set;
  * 1 <= dominoes[i][j] <= 9
  *
  */
-public class NumberOfEquivalentDominoPairs {
+public class Solution1128 {
 
     public static void main(String[] args) {
         //TODO 待改进更优解

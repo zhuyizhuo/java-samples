@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems867;
+package com.github.zhuo.algorithm.leetcode.problems.problems801_900;
 
 /**
  * https://leetcode-cn.com/problems/transpose-matrix/
@@ -18,7 +18,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems801_900.problems867;
  *
  *  m 与 n 不一定相等
  */
-public class TransposeMatrix {
+public class Solution867 {
 
     public static void main(String[] args) {
         System.out.println();

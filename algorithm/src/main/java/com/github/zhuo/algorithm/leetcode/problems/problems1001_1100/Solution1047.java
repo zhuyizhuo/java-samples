@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems1047;
+package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -15,7 +15,7 @@ import java.util.LinkedList;
  * 在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
  *
  */
-public class RemoveDuplicates {
+public class Solution1047 {
 
     public static void main(String[] args) {
         System.out.println(removeDuplicates("abbaca"));

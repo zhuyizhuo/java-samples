@@ -1,4 +1,4 @@
-package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems1004;
+package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100;
 
 /**
  * https://leetcode-cn.com/problems/max-consecutive-ones-iii/
@@ -9,7 +9,7 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100.problems10
  *
  * 返回仅包含 1 的最长（连续）子数组的长度。
  */
-public class MaxConsecutiveOnesIII {
+public class Solution1004 {
 
     public static void main(String[] args) {
         int[] a = {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0};
