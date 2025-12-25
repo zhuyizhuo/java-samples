@@ -33,7 +33,7 @@ public class FileRenameAndMoveTool {
     }
 
     public static void main(String[] args) {
-        String packageName = "problems801_900";
+        String packageName = "problems301_400";
         // 指定源包路径
         String sourcePackagePath = "d:\\git\\java-samples\\algorithm\\src\\main\\java\\com\\github\\zhuo\\algorithm\\leetcode\\problems\\"+packageName;
         

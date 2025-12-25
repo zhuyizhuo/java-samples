@@ -77,10 +77,10 @@ algorithm/
 散列算法一般用于生成数据的摘要信息，是一种不可逆的算法，适合存储密码等敏感数据。
 实现了多种常见的散列算法：
 
-- MD5 - 128位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/hash/HashUtils.java)
-- SHA1 - 160位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/hash/HashUtils.java)
-- SHA256 - 256位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/hash/HashUtils.java)
-- SHA512 - 512位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/hash/HashUtils.java)
+- MD5 - 128位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/utils/HashUtils.java)
+- SHA1 - 160位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/utils/HashUtils.java)
+- SHA256 - 256位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/utils/HashUtils.java)
+- SHA512 - 512位摘要 [HashUtils.java](src/main/java/com/github/zhuo/algorithm/utils/HashUtils.java)
 
 > 注意：进行密码散列时，建议使用salt（盐）增加安全性。
 
