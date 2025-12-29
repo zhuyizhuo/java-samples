@@ -13,11 +13,6 @@ import java.util.List;
 public class PascalTriangleII {
 
     public static void main(String[] args) {
-        //TODO 待优化空间复杂度
-//        System.out.println(getRow(0));
-//        System.out.println(getRow(1));
-//        System.out.println(getRow(2));
-//        System.out.println(getRow(3));
         System.out.println(getRow(4));
     }
 
@@ -25,8 +20,8 @@ public class PascalTriangleII {
      * 此处的定义是从第0行开始
      * 即第0行1个元素  第1行2个元素 以此类推
      *
-     * 执行用时: 2 ms
-     * 内存消耗: 36.5 MB
+     * 执行用时: 2 ms  beats 35.3%
+     * 内存消耗: 36.5 MB  beats 100%
      */
     public static List<Integer> getRow(int rowIndex) {
         List<Integer> l = new ArrayList<>();
@@ -54,5 +49,25 @@ public class PascalTriangleII {
             line++;
         }
         return resp;
+    }
+
+    /**
+     * 0ms
+     * beats 100%
+     */
+    public List<Integer> getRow1(int rowIndex) {
+
+        List<Integer> res = new ArrayList<Integer>();
+
+        long nk = 1;
+
+        for (int i = 0; i <= rowIndex; i++) {
+
+            res.add((int)nk);
+
+            nk = nk * (rowIndex - i) / (i + 1);
+        }
+
+        return res;
     }
 }

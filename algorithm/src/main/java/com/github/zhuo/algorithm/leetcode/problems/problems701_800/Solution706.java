@@ -64,26 +64,73 @@ class MyHashMap {
 }
 
 class MyHashMap1 {
+    class Node {
+        int key;
+        int value;
+        Node next;
 
-    private int[] map;
-    /** Initialize your data structure here. */
+        Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private static final int SIZE = 10_009;
+    private Node[] map;
+
+    private int hash(int key) {
+        return key % SIZE;
+    }
+
+    private Node find(Node head, int key) {
+        Node pre = head;
+        Node cur = head.next;
+
+        while (cur != null && cur.key != key) {
+            pre = pre.next;
+            cur = cur.next;
+        }
+
+        return pre;
+    }
+
     public MyHashMap1() {
-        this.map = new int[1000001];
-        Arrays.fill(map, -1);
+        map = new Node[SIZE];
     }
 
-    /** value will always be non-negative. */
     public void put(int key, int value) {
-        map[key] = value;
+        int index = hash(key);
+        if (map[index] == null) {
+            map[index] = new Node(-1, -1);
+        }
+
+        Node pre = find(map[index], key);
+        if (pre.next != null) {
+            pre.next.value = value;
+        } else {
+            pre.next = new Node(key, value);
+        }
     }
 
-    /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
     public int get(int key) {
-        return map[key];
+        int index = hash(key);
+        if (map[index] == null) {
+            return -1;
+        }
+
+        Node pre = find(map[index], key);
+        return pre.next == null ? -1 : pre.next.value;
     }
 
-    /** Removes the mapping of the specified value key if this map contains a mapping for the key */
     public void remove(int key) {
-        map[key] = -1;
+        int index = hash(key);
+        if (map[index] == null) {
+            return;
+        }
+
+        Node pre = find(map[index], key);
+        if (pre.next != null) {
+            pre.next = pre.next.next;
+        }
     }
 }

@@ -2,9 +2,10 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
- * https://leetcode-cn.com/problems/number-of-restricted-paths-from-first-to-last-node/
+ * https://leetcode.cn/problems/number-of-restricted-paths-from-first-to-last-node/description/
  *
  * 从第一个节点出发到最后一个节点的受限路径数
  * 难度 中等
@@ -43,7 +44,9 @@ import java.util.PriorityQueue;
  */
 public class Solution1786 {
 
-    //TODO 待研究
+    /**
+     * 107ms beats 21.92%
+     */
     public int countRestrictedPaths(int n, int[][] edges) {
         ArrayList<int[]>[] list = new ArrayList[n];
         for (int i = 0; i < n; i++) {
@@ -70,5 +73,77 @@ public class Solution1786 {
             }
         }
         return count[0];
+    }
+}
+
+/**
+ * 21ms beats 100%
+ */
+class Solution {
+
+    static final int mod = (int)1e9 + 7;
+    private  int[] edge, next, head, weight;
+    int index;
+
+    void add(int u, int v, int w) {
+        edge[index] = v;
+        weight[index] = w;
+        next[index] = head[u];
+        head[u] = index++;
+    }
+
+    public int countRestrictedPaths(int n, int[][] edges) {
+
+        int m = edges.length;
+        edge = new int[m << 1 ];
+        weight = new int[m << 1 ];
+        next = new int[m << 1 ];
+        head = new int[n +1];
+
+        for(int i = 0; i < n + 1 ; ++i)
+            head[i] = -1;
+        index = 0;
+
+        for (int[] e:edges) {
+            int u = e[0], v = e[1], weight = e[2];
+            add(u, v, weight);
+            add(v, u, weight);
+        }
+
+        Queue<int[]> pq = new PriorityQueue<>((a, b)->a[1] - b[1]);
+        pq.offer(new int[]{n, 0});
+
+        int[] distances = new int[n + 1];
+        for(int i = 1; i < n; i++)
+            distances[i] = Integer.MAX_VALUE;
+
+        int[] dp = new int[n + 1];
+        dp[n] = 1;
+
+        while(!pq.isEmpty()) {
+
+            int[] cur = pq.poll();
+            int u = cur[0], distance = cur[1];
+            if(distance > distances[u])
+                continue;
+
+            for (int index = head[u]; index != -1; index = next[index]) {
+                int v = edge[index], w = weight[index];
+
+                if(distance > distances[v]) {
+                    dp[u] = (dp[u] + dp[v]) % mod;
+                    continue;
+                }
+                int newDistance = distance + w;
+                if(newDistance < distances[v]) {
+                    distances[v] = newDistance;
+                    pq.offer(new int[] {v, newDistance});
+                }
+            }
+
+            if(u == 1) break;
+        }
+
+        return dp[1];
     }
 }

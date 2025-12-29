@@ -22,8 +22,18 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1001_1100;
  */
 public class Solution1035 {
 
-    public int maxSolution1035(int[] nums1, int[] nums2) {
-        //todo
-        return 0;
+    /**
+     * 3ms
+     * beats 100%  sometime 99.93%
+     */
+    public int maxUncrossedLines(int[] nums1, int[] nums2) {
+        int[] dp=new int[nums2.length+1];
+        for(int i=1;i<=nums1.length;i++){
+            for(int j=nums2.length;j>0;j--){
+                if(nums1[i-1]==nums2[j-1])dp[j]=dp[j-1]+1;
+            }
+            for(int j=1;j<=nums2.length;j++)dp[j]=dp[j]>dp[j-1]?dp[j]:dp[j-1];
+        }
+        return dp[nums2.length];
     }
 }

@@ -33,12 +33,11 @@ import java.util.Arrays;
 public class PalindromePartitioningII {
 
     public static void main(String[] args) {
-        //TODO 动态规划
     }
 
     /**
-     * 执行用时： 18 ms , 在所有 Java 提交中击败了 40.27% 的用户
-     * 内存消耗： 38.7 MB , 在所有 Java 提交中击败了 19.69% 的用户
+     * 执行用时： 18 ms , 在所有 Java 提交中击败了 95.73% 的用户
+     * 内存消耗： 38.7 MB , 在所有 Java 提交中击败了 100.00% 的用户
      */
     public int minCut(String s) {
         int n = s.length();

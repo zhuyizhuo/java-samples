@@ -15,7 +15,6 @@ package com.github.zhuo.algorithm.leetcode.problems.problems701_800;
  *  1 <= m, n <= 20
  *  0 <= matrix[i][j] <= 99
  *
- * TODO
  * 进阶:
  *  如果矩阵存储在磁盘上，并且内存有限，以至于一次最多只能将矩阵的一行加载到内存中，该怎么办？
  *  如果矩阵太大，以至于一次只能将不完整的一行加载到内存中，该怎么办？
@@ -46,6 +45,9 @@ public class Solution766 {
      * 思路: 对角线元素相同即为true, 即从第二行起，每行的第二列至最后的元素等于上一行当前列数减一的元素值
      *
      * 考虑特殊情况 只有一行 和 只有一列 按题意应该为 true
+     *
+     * 1ms beats 67.14%
+     * 内存 38.39m beats 100%
      *
      */
     public static boolean isSolution766(int[][] matrix) {

@@ -19,19 +19,34 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1201_1300;
 public class Solution1208 {
 
     public static void main(String[] args) {
-        //TODO 和 424 题相似
-
+        Solution1208 solution1208 = new Solution1208();
+        System.out.println(solution1208.equalSubstring("abcd","bcdf", 3));//3
+        System.out.println(solution1208.equalSubstring("abcd","cdef", 3));//1
+        System.out.println(solution1208.equalSubstring("abcd","acde", 0));//1
     }
 
     /**
-     * 两字符串同下标相等的最长连续子串 包含转换后的字符
-     *
-     * 挨个下标比对字符 如果不相等 则用 开销 减去 字符的差的绝对值
-     * 如果绝对值小于0 记录最长连续数 如果未比对完毕
-     *
+     * 5ms beats 91.37%
      */
     public int equalSubstring(String s, String t, int maxCost) {
-
-        return 0;
+        int n=s.length();
+        int[] diff =new int[n];
+        for(int i=0;i<n;i++){
+            diff[i] = Math.abs(s.charAt(i)-t.charAt(i));
+        }
+        int maxlength =0;
+        int start=0,end =0;
+        int curcost=0;
+        while(end<n){
+            curcost +=diff[end];
+            if(curcost>maxCost){
+                curcost-=diff[start];
+                start++;
+            }
+            maxlength=Math.max(maxlength,end-start+1);
+            end++;
+        }
+        return maxlength;
     }
+
 }

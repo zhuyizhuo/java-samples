@@ -32,7 +32,6 @@ import java.util.Set;
 public class Solution1128 {
 
     public static void main(String[] args) {
-        //TODO 待改进更优解
         System.out.println(numEquivDominoPairs(new int[][]{{1,2},{2,1},{3,4},{4,3},{3,4},{5,6}}));
     }
 
@@ -49,6 +48,8 @@ public class Solution1128 {
      * 4              10 = 4+3+2+1
      *
      * 可用等差数列求和公式算出组合数。
+     * 执行用时 48ms beats 5.41%
+     * 消耗内存 51.02MB 击败100.00%
      */
     public static int numEquivDominoPairs(int[][] dominoes) {
         Map<String, Integer> m = new HashMap<>();
@@ -75,6 +76,47 @@ public class Solution1128 {
             Integer value = s.getValue();
             for (int i = 1; i <= value; i++) {
                 count += i;
+            }
+        }
+        return count;
+    }
+}
+
+class Solution {
+    /**
+     * 2ms beats 99.23%
+     */
+    public int numEquivDominoPairs(int[][] dominoes) {
+        int[] num = new int[100];
+        int ret = 0;
+        for (int[] domino : dominoes) {
+            int val = domino[0] < domino[1] ? domino[0] * 10 + domino[1] : domino[1] * 10 + domino[0];
+            ret += num[val];
+            num[val]++;
+        }
+        return ret;
+    }
+
+    /**
+     * 1ms beats 100%
+     */
+    public int numEquivDominoPairs1(int[][] dominoes) {
+        //由于骨牌只有两个数，所以等价只发生在两张反向牌和两张同向牌之间
+        int count=0;
+        //数组哈希，每个骨牌上位*10+下位，总和不超过100
+        int[] map=new int[100];
+        for(int i=0;i<dominoes.length;i++){
+            int curr=dominoes[i][0]*10+dominoes[i][1];
+            map[curr]++;
+        }
+        for(int i=0;i<100;i++){
+            int freq=map[i];
+            int reverse=(i%10)*10+i/10;
+            count+=(freq*(freq-1)/2);//自己的Cn2;
+            //保证单向遍历
+            if(reverse>i){
+                int seek=map[reverse];
+                count+=(freq*seek);//只向后查找，找到则加上乘积种类数
             }
         }
         return count;

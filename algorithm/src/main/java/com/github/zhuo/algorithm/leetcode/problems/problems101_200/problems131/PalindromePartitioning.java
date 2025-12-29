@@ -28,6 +28,9 @@ public class PalindromePartitioning {
     List<String> ans = new ArrayList<String>();
     int n;
 
+    /**
+     * 9ms beats 50.45%
+     */
     public List<List<String>> partition(String s) {
         n = s.length();
         f = new boolean[n][n];
