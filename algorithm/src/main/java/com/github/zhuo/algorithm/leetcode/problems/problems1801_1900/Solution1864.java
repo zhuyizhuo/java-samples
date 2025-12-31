@@ -20,24 +20,44 @@ public class Solution1864 {
     }
 
     public static int minSwaps(String s) {
-        int[] count = new int[2];
-        int total = '0' + '1';
-        char[] chars = s.toCharArray();
-        int shouldBe = total - chars[0];
-        for (int i = 1; i < chars.length; i++) {
-            if (chars[i] != shouldBe){
-                count['1' - chars[i]]++;
-            }
-            shouldBe = total - shouldBe;
-        }
-        if (s.length() == 3){
-            if (count[0] == 1 || count[1] == 1){
-                return 1;
+        int n = s.length();
+        int n0 = 0, n1 = 0;
+
+        // 统计0和1的个数
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == '0') {
+                n0++;
+            } else {
+                n1++;
             }
         }
-        if (count[0] != count[1]){
-            return -1;
+
+        int res = Integer.MAX_VALUE;
+
+        // 尝试 "1010..." 模式（1开头）
+        if (n1 == (n + 1) / 2 && n0 == n / 2) {
+            int diff1 = 0;
+            for (int i = 0; i < n; i++) {
+                // 如果当前位置应该是1（偶数位置0,2,4...）但实际不是1，则需要交换
+                if (s.charAt(i) - '0' == i % 2) {
+                    diff1++;
+                }
+            }
+            res = Math.min(res, diff1 / 2);
         }
-        return count[0];
+
+        // 尝试 "0101..." 模式（0开头）
+        if (n0 == (n + 1) / 2 && n1 == n / 2) {
+            int diff2 = 0;
+            for (int i = 0; i < n; i++) {
+                // 如果当前位置应该是0（偶数位置0,2,4...）但实际不是0，则需要交换
+                if (s.charAt(i) - '0' != i % 2) {
+                    diff2++;
+                }
+            }
+            res = Math.min(res, diff2 / 2);
+        }
+
+        return res == Integer.MAX_VALUE ? -1 : res;
     }
 }

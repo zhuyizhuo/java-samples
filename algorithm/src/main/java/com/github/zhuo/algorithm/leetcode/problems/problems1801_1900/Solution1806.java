@@ -25,28 +25,19 @@ import java.util.Arrays;
 public class Solution1806 {
 
     public static void main(String[] args) {
-        //TODO 待补充题解
     }
-    public int reinitializePermutation(int n) {
-        int[] ints = new int[n - 1];
-        for (int i = 0; i < n; i++) {
-            ints[i] = i;
-        }
-        int[] newInts = new int[n-1];
-        for (int i = 0; i < n; i++) {
-            if (i%2 == 0){
-                newInts[i] = ints[i/2];
-            } else {
-                newInts[i] = ints[n/2 + (i-1)/2];
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            if (newInts[i] != ints[i]){
-                break;
-            }
-        }
-        ints = Arrays.copyOf(newInts, n-1);
 
-        return 0;
-    }
-}
+    /**
+     * beats 100%
+     */
+    public int reinitializePermutation(int n) {
+        if (n == 2) {
+            return 1;
+        }
+        int step = 1, pow2 = 2;
+        while (pow2 != 1) {
+            step++;
+            pow2 = pow2 * 2 % (n - 1);
+        }
+        return step;
+    }}

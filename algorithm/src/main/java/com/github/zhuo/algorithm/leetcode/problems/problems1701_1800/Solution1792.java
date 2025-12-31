@@ -23,37 +23,51 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
  */
 public class Solution1792 {
     public static void main(String[] args) {
-        //TODO 解法有误
-//        int[][] ints = {{2, 4}, {3, 9}, {4, 5}, {2, 10}};
-//        for (int i = 0; i < ints.length; i++) {
-//            System.out.print(ints[i][0]*1.0/ints[i][1] + " ");
-//            System.out.print((ints[i][0]+1)*1.0/(ints[i][1]+1) + " ");
-//            System.out.print((ints[i][0]+2)*1.0/(ints[i][1]+2) + " ");
-//            System.out.print((ints[i][0]+3)*1.0/(ints[i][1]+3) + " ");
-//            System.out.print((ints[i][0]+4)*1.0/(ints[i][1]+4) + " ");
-//            System.out.println();
-//        }
-//        System.out.println((0.75+0.5384615384615384+0.8888888888888888+0.42857142857142855)/4);
-        System.out.println(maxAverageRatio(new int[][]{{1,2},{3,5},{2,2}}, 2));
-        System.out.println(maxAverageRatio(new int[][]{{2,4},{3,9},{4,5},{2,10}}, 4));
+        Solution1792 solution1792 = new Solution1792();
+        System.out.println(solution1792.maxAverageRatio(new int[][]{{1,2},{3,5},{2,2}}, 2));
+        System.out.println(solution1792.maxAverageRatio(new int[][]{{2,4},{3,9},{4,5},{2,10}}, 4));
     }
 
-    public static double maxAverageRatio(int[][] classes, int extraStudents) {
-        double max = -1.0;
-        double maxPlus = 0;
-        double sum = 0;
-        double origin = 0;
-        int length = classes.length;
-        for (int i = 0; i < length; i++) {
-            double v = classes[i][0] * 1.0 / classes[i][1];
-            double newV = (classes[i][0] + extraStudents) * 1.0 /(classes[i][1] + extraStudents);
-            if (newV - v > maxPlus || max == -1.0){
-                maxPlus = newV - v;
-                max = newV;
-                origin = v;
+    static double THRES = 0.0000000009;
+
+    public double maxAverageRatio(int[][] classes, int extraStudents) {
+        double left = 0, right = 1, mid;
+        while(right - left >= THRES) {
+            mid = (left + right) / 2;
+            int extra = 0;
+            for(int i = 0; i < classes.length; i++) {
+                int notPass = classes[i][1] - classes[i][0];
+                if (notPass == 0) {
+                    continue;
+                }
+                extra += Math.max(Math.sqrt(notPass / mid) - classes[i][1], 0);
             }
-            sum += v;
+            if (extra <= extraStudents) {
+                right = mid;
+            }
+            else {
+                left = mid;
+            }
         }
-        return (sum - origin + max)/length;
+        double ret = 0;
+        for(int i = 0; i < classes.length; i++) {
+            int notPass = classes[i][1] - classes[i][0];
+            if (notPass == 0) {
+                ret += 1;
+                continue;
+            }
+            int total = (int)(Math.sqrt(notPass / right));
+            int addedStudent = Math.max(total, classes[i][1]) - classes[i][1];
+            classes[i][1] += addedStudent;
+            classes[i][0] += addedStudent;
+            // System.out.println(classes[i][0]+ ", " + classes[i][1]);
+            ret += (double)(classes[i][0]) / classes[i][1];
+            extraStudents -= addedStudent;
+        }
+        // System.out.println(extraStudents);
+        for (int i = 0; i < extraStudents; i++) {
+            ret += (double)(classes[i][1] - classes[i][0]) / classes[i][1] / (classes[i][1] + 1);
+        }
+        return ret / classes.length;
     }
 }

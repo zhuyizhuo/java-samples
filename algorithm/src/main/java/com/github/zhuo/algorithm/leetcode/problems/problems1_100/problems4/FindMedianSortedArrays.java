@@ -54,7 +54,6 @@ import java.util.Arrays;
 public class FindMedianSortedArrays {
 
     public static void main(String[] args) {
-        //TODO 本题难点为 优化时间复杂度到 O(log (m+n))
         System.out.println(findMedianSortedArrays(new int[]{1, 2, 3, 4, 5}, new int[]{8}));
     }
 
@@ -86,4 +85,47 @@ public class FindMedianSortedArrays {
         return (double) (all[left] + all[right]) / 2;
     }
 
+}
+
+/**
+ * beats 100%
+ */
+class FindMedianSortedArrays1 {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int length1 = nums1.length, length2 = nums2.length;
+        int totalLength = (length1+length2);
+        if(totalLength%2==1){
+            return findElement(nums1, nums2, totalLength/2+1);
+        }else{
+            return (findElement(nums1, nums2 ,totalLength/2+1)+findElement(nums1, nums2 ,totalLength/2))/2.0;
+        }
+    }
+
+    public int findElement(int[] nums1, int[] nums2, int k){
+        int length1 = nums1.length, length2 = nums2.length;
+        int index1 = 0, index2 = 0;
+        int kthElement = k/2;
+        while(true){
+            if(index1==length1){
+                return nums2[index2+k-1];
+            }
+            if(index2==length2){
+                return nums1[index1+k-1];
+            }
+            if(k==1){
+                return Math.min(nums1[index1],nums2[index2]);
+            }
+            int half = k/2;
+            int newIndex1 = Math.min(index1+half,length1)-1;
+            int newIndex2 = Math.min(index2+half,length2)-1;
+            int prviot1 = nums1[newIndex1],prviot2 = nums2[newIndex2];
+            if(prviot1<=prviot2){
+                k-=(newIndex1-index1+1);
+                index1 = newIndex1+1;
+            }else{
+                k-=(newIndex2-index2+1);
+                index2 = newIndex2+1;
+            }
+        }
+    }
 }

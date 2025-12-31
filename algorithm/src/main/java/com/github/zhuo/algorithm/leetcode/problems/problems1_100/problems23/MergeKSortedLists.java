@@ -20,7 +20,6 @@ import java.util.List;
 public class MergeKSortedLists {
 
     public static void main(String[] args) {
-        //todo 可优化时间复杂度
     }
 
     /**
@@ -50,5 +49,56 @@ public class MergeKSortedLists {
             tail.val = all.get(i);
         }
         return head.next;
+    }
+}
+
+
+/**
+ * beats 100%
+ *
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class MergeKSortedLists1 {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (null == lists || lists.length == 0) {
+            return null;
+        }
+        return mergeList(lists, 0, lists.length - 1);
+    }
+
+    public ListNode mergeList(ListNode[] lists, int l, int r) {
+        if (l == r) {
+            return lists[l];
+        }
+        if (l > r) {
+            return null;
+        }
+        int mid = (l + r) >> 1;
+        return mergeListTwo(mergeList(lists, l, mid), mergeList(lists, mid+1, r));
+    }
+
+    public ListNode mergeListTwo(ListNode list1, ListNode list2) {
+        ListNode head = new ListNode(0);
+        ListNode tail = head;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                tail.next = list1;
+                list1 = list1.next;
+            } else {
+                tail.next = list2;
+                list2 = list2.next;
+            }
+            tail = tail.next;
+        }
+        tail.next = null != list1 ? list1 : list2;
+        return head.next;
+
     }
 }

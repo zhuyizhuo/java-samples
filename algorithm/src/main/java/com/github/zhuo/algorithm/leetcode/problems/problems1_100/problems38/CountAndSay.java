@@ -8,10 +8,14 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems38;
 public class CountAndSay {
 
     public static void main(String[] args) {
-        //TODO
-        System.out.println(countAndSay(3));
+        System.out.println(countAndSay(29));
     }
 
+    /**
+     * beats 98.33%
+     *
+     * beats 100% 的是个穷举 switch
+     */
     public static String countAndSay(int n) {
         if (n == 0){
             return "";

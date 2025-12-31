@@ -24,7 +24,6 @@ import java.util.Arrays;
 public class ThreeSumClosest {
 
     public static void main(String[] args) {
-        //TODO 可继续优化时间复杂度
         System.out.println(threeSumClosest(new int[]{-1,2,1,-4}, 1));
     }
 
@@ -73,5 +72,64 @@ public class ThreeSumClosest {
             }
         }
         return threeSum;
+    }
+}
+
+/**
+ * beats 96.28%
+ */
+class ThreeSumClosest1 {
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int ans = 0, n = nums.length;
+        int minDiff = Integer.MAX_VALUE;
+        for (int i = 0; i < n - 2; i++) {
+            int x = nums[i];
+            if (i > 0 && x == nums[i - 1]) {
+                continue; // 优化三
+            }
+
+            // 优化一
+            int s = x + nums[i + 1] + nums[i + 2];
+            if (s > target) { // 后面无论怎么选，选出的三个数的和不会比 s 还小
+                if (s - target < minDiff) {
+                    ans = s; // 由于下面直接 break，这里无需更新 minDiff
+                }
+                break;
+            }
+
+            // 优化二
+            s = x + nums[n - 2] + nums[n - 1];
+            if (s < target) { // x 加上后面任意两个数都不超过 s，所以下面的双指针就不需要跑了
+                if (target - s < minDiff) {
+                    minDiff = target - s;
+                    ans = s;
+                }
+                continue;
+            }
+
+            // 双指针
+            int j = i + 1, k = n - 1;
+            while (j < k) {
+                s = x + nums[j] + nums[k];
+                if (s == target) {
+                    return target;
+                }
+                if (s > target) {
+                    if (s - target < minDiff) { // s 与 target 更近
+                        minDiff = s - target;
+                        ans = s;
+                    }
+                    k--;
+                } else { // s < target
+                    if (target - s < minDiff) { // s 与 target 更近
+                        minDiff = target - s;
+                        ans = s;
+                    }
+                    j++;
+                }
+            }
+        }
+        return ans;
     }
 }

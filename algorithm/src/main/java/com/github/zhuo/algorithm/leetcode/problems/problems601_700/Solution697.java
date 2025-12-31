@@ -17,7 +17,6 @@ import java.util.Map;
 public class Solution697 {
 
     public static void main(String[] args) {
-        //todo 可继续优化
         System.out.println(findShortestSubArray(new int[]{1, 2, 2, 3, 1}));
         System.out.println(findShortestSubArray(new int[]{1,2,2,3,1,4,2}));
     }

@@ -1,9 +1,6 @@
 package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems30;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/
@@ -26,7 +23,6 @@ import java.util.List;
 public class SubstringWithConcatenationOfAllWords {
 
     public static void main(String[] args) {
-        //todo 待优化
         System.out.println(findSubstring("barfoothefoobarman", new String[]{"foo","bar"}));
         System.out.println(findSubstring("foobarfoobar", new String[]{"foo","bar"}));
         System.out.println(findSubstring("a", new String[]{"a"}));
@@ -172,5 +168,51 @@ public class SubstringWithConcatenationOfAllWords {
             }
         }
         return resp;
+    }
+}
+
+/**
+ * 20ms beats 61.11%
+ */
+class FindSubstring {
+    public List<Integer> findSubstring(String s, String[] words) {
+        final int wordLen = words[0].length();
+        final int length = s.length();
+        final int wordSize = words.length;
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < wordLen; i++) {
+            Map<String, Integer> differs = new HashMap<>();
+            if (length - i < wordLen * wordSize) {
+                break;
+            }
+            for (int j = 0; j < wordSize; j++) {
+                final String word = s.substring(i + j * wordLen, i + (j + 1) * wordLen);
+                differs.put(word, differs.getOrDefault(word, 0) + 1);
+            }
+            for (String word : words) {
+                differs.put(word, differs.getOrDefault(word, 0) - 1);
+                if (differs.get(word) == 0) {
+                    differs.remove(word);
+                }
+            }
+            for (int start = i; start <= length - wordSize * wordLen; start += wordLen) {
+                if (start != i) {
+                    final String w1 = s.substring(start - wordLen, start);
+                    differs.put(w1, differs.getOrDefault(w1, 0) - 1);
+                    if (differs.get(w1) == 0) {
+                        differs.remove(w1);
+                    }
+                    final String w2 = s.substring(start + (wordSize - 1) * wordLen, start + wordSize * wordLen);
+                    differs.put(w2, differs.getOrDefault(w2, 0) + 1);
+                    if (differs.get(w2) == 0) {
+                        differs.remove(w2);
+                    }
+                }
+                if (differs.isEmpty()) {
+                    res.add(start);
+                }
+            }
+        }
+        return res;
     }
 }

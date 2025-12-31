@@ -28,61 +28,43 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1_100.problems10;
 public class RegularExpressionMatching {
 
     public static void main(String[] args) {
-        //todo
-        System.out.println(isMatch("aasdfadsfasdfasfb", ".*b"));
+//        System.out.println(isMatch("aasdfadsfasdfasfb", ".*b"));
         //true
-        System.out.println(isMatch("aab", "c*a*b"));
+//        System.out.println(isMatch("aab", "c*a*b"));
 
         System.out.println();
     }
 
-    public static boolean isMatch(String s, String p) {
-        int sIndex = 0;
-        int pIndex = 0;
-        char lastChar = p.charAt(0);
-        int length = s.length();
-        int pLength = p.length();
-        while (sIndex < length) {
-            if (pIndex == pLength){
-                return false;
-            }
-            char c = s.charAt(sIndex);
-            char c1 = p.charAt(pIndex);
-            // 匹配任意单个字符 跳过当前字符的比对
-            if (c1 == '.'){
-                sIndex++;
-                pIndex++;
-                lastChar = c1;
-                continue;
-            } else if (c1 == '*'){
-                //如果上一个字符是. 则跳过当前字符比对
-                if (lastChar == '.'){
-                    sIndex++;
-                    continue;
+    public boolean isMatch(String s, String p) {
+        int m = s.length();
+        int n = p.length();
+
+        boolean[][] f = new boolean[m + 1][n + 1];
+        f[0][0] = true;
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                if (p.charAt(j - 1) == '*') {
+                    f[i][j] = f[i][j - 2];
+                    if (matches(s, p, i, j - 1)) {
+                        f[i][j] = f[i][j] || f[i - 1][j];
+                    }
+                } else {
+                    if (matches(s, p, i, j)) {
+                        f[i][j] = f[i - 1][j - 1];
+                    }
                 }
-                // 匹配零个或多个前面的那一个元素
-                if (c != lastChar){
-                    //未匹配上则和正则下一个字符匹配
-                    pIndex++;
-                    continue;
-                }
-                //匹配上了则匹配下一个字符
-                sIndex++;
-            } else {
-                //比对当前字符是否匹配
-                //如果上一个字符是. 则跳过当前字符
-                if (lastChar == '.'){
-                    sIndex++;
-                    continue;
-                }
-                if (c != c1){
-                    return false;
-                }
-                sIndex++;
-                pIndex++;
-                lastChar = c1;
             }
         }
-        return pIndex == pLength - 1;
+        return f[m][n];
+    }
+
+    public boolean matches(String s, String p, int i, int j) {
+        if (i == 0) {
+            return false;
+        }
+        if (p.charAt(j - 1) == '.') {
+            return true;
+        }
+        return s.charAt(i - 1) == p.charAt(j - 1);
     }
 }

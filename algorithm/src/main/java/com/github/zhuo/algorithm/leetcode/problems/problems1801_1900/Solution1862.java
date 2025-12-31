@@ -21,34 +21,38 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Solution1862 {
 
     public static void main(String[] args) {
-        //TODO
 //        System.out.println(sumOfFlooredPairs(new int[]{2,5,9}));
-        System.out.println(sumOfFlooredPairs(new int[]{7,7,7,7,7,7,7}));
+//        System.out.println(sumOfFlooredPairs(new int[]{7,7,7,7,7,7,7}));
     }
 
-    static AtomicInteger total = new AtomicInteger();
-
-    public static int sumOfFlooredPairs(int[] nums) {
-        Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length; i++) {
-            int finalI = i;
-            new Thread(() -> dfs(nums, 0, nums[finalI])).run();
+    public int sumOfFlooredPairs(int[] sum) {
+        long res=0,p=1000000007;
+        int n=sum.length,maxx=0;
+        //找到最大的数，确定数组范围
+        for(int i=0;i<n;i++){
+            maxx=Math.max(maxx,sum[i]);
         }
-
-        return total.get() % 1000_000_007;
-    }
-
-    private static void dfs(int[] nums, int i, int num) {
-        int i1 = num / nums[i];
-        if (i1 == 0){
-            return;
+        int[] num=new int[maxx+1];
+        //计数
+        for(int i=0;i<n;i++)
+            num[ sum[i] ]++;
+        //前缀和
+        for(int i=1;i<=maxx;i++)
+            num[i]+=num[i-1];
+        for(int i=1;i<=maxx;i++){
+            //x表示数字i的个数
+            long x=num[i]-num[i-1];
+            if(x==0)
+                continue;
+            //[i,i*2-1]、[i*2,i*3-1]、[i*3,i*4-1]，区间内的floor函数值都一样
+            for(int j=i;j<=maxx;j=j+i){
+                //y表示区间的个数,如果j+i-1>maxx则取maxx即可，防止数组溢出
+                long y=num[Math.min(j+i-1,maxx)]-num[j-1];
+                //倍数*区间数*个数
+                res=(res+(j/i)*y*x)%p;
+            }
         }
-        total.getAndAdd(i1);
-        if (i == nums.length - 1){
-            return;
-        }
-        dfs(nums, i+1, num);
+        return (int)res;
     }
 
 }

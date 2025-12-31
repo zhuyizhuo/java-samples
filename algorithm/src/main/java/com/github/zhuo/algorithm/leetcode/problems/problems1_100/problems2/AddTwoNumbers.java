@@ -47,8 +47,6 @@ public class AddTwoNumbers {
     }
 
     /**
-     * 思路 TODO
-     *
      * 执行用时： 2 ms , 在所有 Java 提交中击败了 100% 的用户
      */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
