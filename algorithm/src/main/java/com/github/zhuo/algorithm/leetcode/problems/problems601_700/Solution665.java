@@ -15,7 +15,6 @@ package com.github.zhuo.algorithm.leetcode.problems.problems601_700;
 public class Solution665 {
 
     public static void main(String[] args) {
-        //TODO 了解此题的其他解决办法
         System.out.println(checkPossibility(new int[]{3,7,2,3,4}));//false
 
         System.out.println(checkPossibility(new int[]{3,4,2,3}));//false
@@ -101,4 +100,28 @@ public class Solution665 {
         }
         return true;
     }
+
+    /**
+     * 0ms beats 100%
+     */
+    public boolean checkPossibility1(int[] nums) {
+        int count=1;
+        for(int i=1;i<nums.length;i++){
+            if( nums[i-1]<= nums[i]) continue;
+            else{
+                if(count==1){
+                    count--;
+                    if(i!=1 && nums[i-2]>nums[i])
+                        nums[i]=nums[i-1];
+                    else {
+                        nums[i-1]=nums[i];
+                    }
+                }else{
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 }

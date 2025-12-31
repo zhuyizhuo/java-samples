@@ -20,7 +20,6 @@ import java.util.Set;
 public class UglyNumberII {
 
     public static void main(String[] args) {
-        //todo
     }
 
     /**
@@ -47,4 +46,30 @@ public class UglyNumberII {
         return ugly;
     }
 
+    /**
+     * 2ms beats 100%
+     */
+    public int nthUglyNumber1(int n) {
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int[] res = new int[n];
+        res[0] = 1;
+        for (int i = 1; i < n; i++) {
+            int x = res[a] * 2;
+            int y = res[b] * 3;
+            int z = res[c] * 5;
+            res[i] = Math.min(x, Math.min(y, z));
+            if (res[i] == x) {
+                a++;
+            }
+            if (res[i] == y) {
+                b++;
+            }
+            if (res[i] == z) {
+                c++;
+            }
+        }
+        return res[n - 1];
+    }
 }

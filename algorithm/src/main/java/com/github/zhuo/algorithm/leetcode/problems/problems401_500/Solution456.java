@@ -1,5 +1,8 @@
 package com.github.zhuo.algorithm.leetcode.problems.problems401_500;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * https://leetcode-cn.com/problems/132-pattern/
  * 132模式
@@ -18,39 +21,27 @@ package com.github.zhuo.algorithm.leetcode.problems.problems401_500;
 public class Solution456 {
 
     public static void main(String[] args) {
-        //TODO 待补充
 //        System.out.println(find132pattern(new int[]{3,5,0,3,4}));
         System.out.println(find132pattern(new int[]{1,2,3,2}));
     }
 
     /**
-     * 子序列 不一定是连续的
+     * 10ms beats 97.89%
+     * @param nums
+     * @return
      */
     public static boolean find132pattern(int[] nums) {
-        int length = nums.length;
-        if (length < 3){
-            return false;
-        }
-        for (int i = 0; i < length - 2; i++) {
-            if (i > 0 && nums[i] == nums[i-1]){
-                continue;
+        int n = nums.length;
+        Deque<Integer> d = new ArrayDeque<>();
+        int k = Integer.MIN_VALUE;
+        for (int i = n - 1; i >= 0; i--) {
+            if (nums[i] < k) return true;
+            while (!d.isEmpty() && d.peekLast() < nums[i]) {
+                k = Math.max(k, d.pollLast());
             }
-            for (int j = i + 1; j < length - 1; j++) {
-                if (j > i + 1 && nums[j] == nums[j-1]){
-                    continue;
-                }
-                if (nums[i] < nums[j]){
-                    for (int k = j + 1; k < length; k++) {
-                        if (k > j + 1 && nums[k] == nums[k-1]){
-                            continue;
-                        }
-                        if (nums[i] < nums[k] && nums[k] < nums[j]){
-                            return true;
-                        }
-                    }
-                }
-            }
+            d.addLast(nums[i]);
         }
         return false;
     }
+
 }
