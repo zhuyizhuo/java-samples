@@ -8,7 +8,6 @@ package com.github.zhuo.algorithm.leetcode.problems.problems701_800;
 public class Solution724 {
 
     public static void main(String[] args) {
-        //todo 优化更优解
     }
 
     /**
@@ -32,4 +31,25 @@ public class Solution724 {
         return -1;
     }
 
+}
+
+/**
+ * 1ms  beats 91.47%
+ */
+class PivotIndex {
+    public int pivotIndex(int[] nums) {
+        int sum = 0;
+        for (int n : nums) {
+            sum += n;
+        }
+
+        int l = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (l == sum - l - nums[i]) {
+                return i;
+            }
+            l += nums[i];
+        }
+        return -1;
+    }
 }
