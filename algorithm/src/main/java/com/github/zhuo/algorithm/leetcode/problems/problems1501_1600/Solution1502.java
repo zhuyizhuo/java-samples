@@ -20,7 +20,6 @@ public class Solution1502 {
         int n =arr.length;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        int sum=0;
         for(int i =0; i<n ;i++){
             if(max<arr[i]){
                 max =arr[i];
@@ -28,7 +27,6 @@ public class Solution1502 {
             if(min > arr[i]){
                 min =arr[i];
             }
-            sum+=arr[i];
         }
         if(max == min){
             return true;
