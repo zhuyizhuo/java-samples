@@ -33,7 +33,7 @@ public class FileRenameAndMoveTool {
     }
 
     public static void main(String[] args) {
-        String packageName = "problems1_100";
+        String packageName = "problems101_200";
         // 指定源包路径
         String sourcePackagePath = "d:\\git\\java-samples\\algorithm\\src\\main\\java\\com\\github\\zhuo\\algorithm\\leetcode\\problems\\"+packageName;
         
@@ -67,26 +67,31 @@ public class FileRenameAndMoveTool {
                     continue;
                 }
                 
-                // 目标文件名
-                String targetFileName = "Solution" + problemNumber + ".java";
-                Path targetFilePath = Paths.get(targetPackagePath, targetFileName);
-                
-                // 获取子包中的Java文件
-                List<Path> javaFiles = getJavaFiles(subPackage);
+                // 获取子包中的所有文件
+                List<Path> javaFiles = getAllFiles(subPackage);
                 
                 if (javaFiles.isEmpty()) {
-                    log.add("子包" + subPackageName + "中没有Java文件");
+                    log.add("子包" + subPackageName + "中没有文件");
                     log.add("");
                     continue;
                 }
                 
                 if (javaFiles.size() > 1) {
-                    log.add("警告：子包" + subPackageName + "中有多个Java文件，仅处理第一个文件");
+                    log.add("警告：子包" + subPackageName + "中有多个文件，仅处理第一个文件");
                 }
                 
-                // 处理第一个Java文件
+                // 处理第一个文件
                 Path sourceFilePath = javaFiles.get(0);
                 String sourceFileName = sourceFilePath.getFileName().toString();
+                
+                // 目标文件名（保持原文件后缀）
+                String extension = "";
+                int lastDotIndex = sourceFileName.lastIndexOf('.');
+                if (lastDotIndex != -1 && lastDotIndex < sourceFileName.length() - 1) {
+                    extension = sourceFileName.substring(lastDotIndex);
+                }
+                String targetFileName = "Solution" + problemNumber + extension;
+                Path targetFilePath = Paths.get(targetPackagePath, targetFileName);
                 
                 log.add("处理子包：" + subPackageName);
                 log.add("  源文件：" + sourceFileName);
@@ -95,13 +100,17 @@ public class FileRenameAndMoveTool {
                 try {
                     // 读取源文件内容（Java 8兼容）
                     String content = readFileContent(sourceFilePath);
+                    String updatedContent = content;
                     
-                    // 修改包声明
-                    String updatedContent = updatePackageDeclaration(content, targetPackageName);
-                    
-                    // 修改类名
-                    String className = extractClassName(sourceFileName);
-                    updatedContent = updateClassName(updatedContent, className, "Solution" + problemNumber);
+                    // 仅对Java文件进行包声明和类名修改
+                    if (sourceFileName.endsWith(".java")) {
+                        // 修改包声明
+                        updatedContent = updatePackageDeclaration(content, targetPackageName);
+                        
+                        // 修改类名
+                        String className = extractClassName(sourceFileName);
+                        updatedContent = updateClassName(updatedContent, className, "Solution" + problemNumber);
+                    }
                     
                     // 写入目标文件（Java 8兼容）
                     writeFileContent(targetFilePath, updatedContent);
@@ -121,8 +130,7 @@ public class FileRenameAndMoveTool {
                 System.out.println(line);
             }
             
-            // 将日志写入文件
-            writeLogToFile(log);
+            
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -145,18 +153,18 @@ public class FileRenameAndMoveTool {
     }
     
     /**
-     * 获取指定路径下的所有Java文件
+     * 获取指定路径下的所有文件
      */
-    private static List<Path> getJavaFiles(Path directoryPath) throws IOException {
-        List<Path> javaFiles = new ArrayList<>();
+    private static List<Path> getAllFiles(Path directoryPath) throws IOException {
+        List<Path> allFiles = new ArrayList<>();
         
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(directoryPath, "*.java")) {
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(directoryPath, Files::isRegularFile)) {
             for (Path path : stream) {
-                javaFiles.add(path);
+                allFiles.add(path);
             }
         }
         
-        return javaFiles;
+        return allFiles;
     }
     
     /**
@@ -183,11 +191,12 @@ public class FileRenameAndMoveTool {
     }
     
     /**
-     * 从文件名中提取类名（去掉.java后缀）
+     * 从文件名中提取类名或基础文件名（去掉后缀）
      */
     private static String extractClassName(String fileName) {
-        if (fileName.endsWith(".java")) {
-            return fileName.substring(0, fileName.length() - 5);
+        int lastDotIndex = fileName.lastIndexOf('.');
+        if (lastDotIndex != -1 && lastDotIndex < fileName.length() - 1) {
+            return fileName.substring(0, lastDotIndex);
         }
         return fileName;
     }
@@ -228,19 +237,5 @@ public class FileRenameAndMoveTool {
         content = content.replaceAll(parameterPattern, "$1" + newClassName + "$3");
         
         return content;
-    }
-    
-    /**
-     * 将日志写入文件
-     */
-    private static void writeLogToFile(List<String> log) throws IOException {
-        Path logFilePath = Paths.get("file_rename_move_log.txt");
-        try (BufferedWriter writer = Files.newBufferedWriter(logFilePath, StandardCharsets.UTF_8)) {
-            for (String line : log) {
-                writer.write(line);
-                writer.newLine();
-            }
-        }
-        System.out.println("\n日志已写入文件：" + logFilePath.toAbsolutePath());
     }
 }

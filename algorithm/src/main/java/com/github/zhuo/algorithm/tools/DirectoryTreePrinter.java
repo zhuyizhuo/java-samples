@@ -13,8 +13,9 @@ public class DirectoryTreePrinter {
     private static Map<String, Integer> fileTypeCountMap = new HashMap<>();
     
     public static void main(String[] args) {
-        // 获取指定的com目录
-        File targetDirectory = new File("D:\\git\\java-samples\\algorithm\\src\\main\\java\\com\\github\\zhuo\\algorithm\\leetcode");
+        // 动态获取当前项目根目录并拼接目标路径
+        String projectRoot = System.getProperty("user.dir");
+        File targetDirectory = new File(projectRoot, "src/main/java/com/github/zhuo/algorithm/leetcode");
         
         System.out.println("目标目录: " + targetDirectory.getAbsolutePath());
         System.out.println("目录结构:");
@@ -83,27 +84,26 @@ public class DirectoryTreePrinter {
                             return 1;
                         }
                         
-                        // 都是目录或都是文件，按名称排序
+                        // 都是目录或都是文件，尝试按数字排序
                         String name1 = f1.getName();
                         String name2 = f2.getName();
                         
-                        // 尝试提取数字部分进行数值排序
-                        try {
-                            // 提取problemsxxx中的数字部分
-                            Pattern pattern = Pattern.compile("problems(\\d+)");
-                            Matcher matcher1 = pattern.matcher(name1);
-                            Matcher matcher2 = pattern.matcher(name2);
-                            
-                            if (matcher1.find() && matcher2.find()) {
-                                int num1 = Integer.parseInt(matcher1.group(1));
-                                int num2 = Integer.parseInt(matcher2.group(1));
-                                return Integer.compare(num1, num2);
-                            }
-                        } catch (NumberFormatException e) {
-                            // 如果无法解析为数字，回退到字母顺序排序
+                        // 提取名称中的数字
+                        Long num1 = extractNumbersFromFileName(name1);
+                        Long num2 = extractNumbersFromFileName(name2);
+                        
+                        // 如果两个名称都包含数字，按数字大小排序
+                        if (num1 != null && num2 != null) {
+                            return Long.compare(num1, num2);
+                        } else if (num1 != null) {
+                            // 只有第一个名称有数字，排在前面
+                            return -1;
+                        } else if (num2 != null) {
+                            // 只有第二个名称有数字，排在前面
+                            return 1;
                         }
                         
-                        // 按字母顺序排序
+                        // 两个名称都没有数字，按字母顺序排序
                         return name1.compareTo(name2);
                     }
                 });
@@ -115,5 +115,35 @@ public class DirectoryTreePrinter {
                 }
             }
         }
+    }
+    
+    /**
+     * 从文件名中提取数字
+     * @param fileName 文件名
+     * @return 提取到的数字，如果没有数字则返回null
+     */
+    private static Long extractNumbersFromFileName(String fileName) {
+        // 移除文件扩展名
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex != -1) {
+            fileName = fileName.substring(0, dotIndex);
+        }
+        
+        // 使用正则表达式提取数字
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(fileName);
+        
+        // 找到第一个数字序列
+        if (matcher.find()) {
+            try {
+                return Long.parseLong(matcher.group());
+            } catch (NumberFormatException e) {
+                // 如果数字过大无法解析为Long，返回null
+                return null;
+            }
+        }
+        
+        // 没有找到数字
+        return null;
     }
 }
