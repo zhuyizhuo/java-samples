@@ -12,13 +12,11 @@ public class Solution1502 {
         }
         return true;
     }
-}
 
-/**
- * beats 100%
- */
-class Solution {
-    public boolean canMakeArithmeticProgression(int[] arr) {
+    /**
+     * beats 100%
+     */
+    public boolean canMakeArithmeticProgression1(int[] arr) {
         int n =arr.length;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
