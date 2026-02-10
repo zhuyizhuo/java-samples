@@ -16,6 +16,9 @@ import java.util.Map;
  * 子数组 是数组中连续且 非空 的一段元素序列。
  */
 public class Solution3719 {
+    /**
+     * beats 100%
+     */
     public int longestBalanced(int[] nums) {
         int n = nums.length;
         LazySegmentTree t = new LazySegmentTree(n + 1);
