@@ -73,4 +73,27 @@ public class Solution67 {
         }
         return sb.reverse().toString();
     }
+
+    /**
+     * beats 99.65%
+     */
+    public String addBinary1(String a, String b) {
+        if (a.length() < b.length()) return addBinary1(b, a);  // 保证a的长度>=b的长度, 简化代码
+
+        int n = a.length(), m = b.length();
+        char[] ans = new char[n + 1];
+        int carry = 0;  // 进位
+
+        for (int i = n - 1, j = m - 1; i >= 0; i--, j--) {
+            int x = a.charAt(i) - '0';
+            int y = j >= 0 ? b.charAt(j) - '0' : 0;
+            int sum = x + y + carry;
+            ans[i + 1] = (char) (sum % 2 + '0');
+            carry = sum / 2;
+        }
+
+        ans[0] = (char) (carry + '0');
+        return new String(ans, carry ^ 1, n + carry);
+
+    }
 }
