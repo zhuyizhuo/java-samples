@@ -17,16 +17,27 @@ package com.github.zhuo.algorithm.leetcode.problems.problems1701_1800;
 public class Solution1784 {
 
     public static void main(String[] args) {
-        System.out.println(checkOnesSegment("1001"));
-        System.out.println(checkOnesSegment("1"));
-        System.out.println(checkOnesSegment("110"));
-        System.out.println(checkOnesSegment("11100"));
-        System.out.println(checkOnesSegment("101100"));
-        System.out.println(checkOnesSegment("1011100"));
-        System.out.println(checkOnesSegment("10101101"));
+        Solution1784 solution1784 = new Solution1784();
+        System.out.println(solution1784.checkOnesSegment("1001"));
+        System.out.println(solution1784.checkOnesSegment("1"));
+        System.out.println(solution1784.checkOnesSegment("110"));
+        System.out.println(solution1784.checkOnesSegment("11100"));
+        System.out.println(solution1784.checkOnesSegment("101100"));
+        System.out.println(solution1784.checkOnesSegment("1011100"));
+        System.out.println(solution1784.checkOnesSegment("10101101"));
     }
 
-    public static boolean checkOnesSegment(String s) {
+    /**
+     * beats 100%
+     */
+    public boolean checkOnesSegment(String s) {
+        return !s.contains("01");
+    }
+
+    /**
+     * beats 100%
+     */
+    public boolean checkOnesSegment0(String s) {
         char[] chars = s.toCharArray();
         boolean check = false;
         boolean lastIsOne = true;
@@ -42,7 +53,7 @@ public class Solution1784 {
         return true;
     }
 
-    public static boolean checkOnesSegment1(String s) {
+    public boolean checkOnesSegment1(String s) {
         return s.split("0+").length < 2;
     }
 }
