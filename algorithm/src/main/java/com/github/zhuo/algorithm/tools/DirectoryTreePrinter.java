@@ -15,8 +15,8 @@ public class DirectoryTreePrinter {
     public static void main(String[] args) {
         // 动态获取当前项目根目录并拼接目标路径
         String projectRoot = System.getProperty("user.dir");
-        File targetDirectory = new File(projectRoot, "src/main/java/com/github/zhuo/algorithm/leetcode");
-        
+        File targetDirectory = new File(projectRoot, "algorithm/src/main/java/com/github/zhuo/algorithm/leetcode");
+
         System.out.println("目标目录: " + targetDirectory.getAbsolutePath());
         System.out.println("目录结构:");
         
