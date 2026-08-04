@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 找出缺失的元素
  */
-class Solution {
+public class Solution3731 {
     public List<Integer> findMissingElements(int[] nums) {
         List<Integer> res = new ArrayList<>();
         //min,max
