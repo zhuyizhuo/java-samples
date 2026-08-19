@@ -1,0 +1,34 @@
+package com.github.zhuo.algorithm.leetcode.problems.problems1301_1400;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 安排电影院座位
+ */
+public class Solution1386 {
+    /**
+     * beats 100%
+     */
+    public int maxNumberOfFamilies(int n, int[][] reservedSeats) {
+        Map<Integer, Integer> seats = new HashMap<>(); // 2~9 有预定座位的行 -> 这一行具体哪些座位被预定
+        for (int[] r : reservedSeats) {
+            int seat = r[1];
+            if (2 <= seat && seat <= 9) {
+                seats.merge(r[0], 1 << (seat - 2), (a, b) -> a | b); // 把二进制数的 seat-2 这一位变成 1
+            }
+        }
+
+        // 注意：如果某一行只有 1 和 10 被预定，那么这一行不会插到哈希表中（相当于这一行是空的）
+        // 示例 1 只有第 1 行和第 2 行插到哈希表中
+        int emptyRows = n - seats.size();
+        int ans = emptyRows * 2; // 一个空行可以容量 2 个四人小组
+        for (int row : seats.values()) {
+            // 在哈希表中的行，由于 2~9 至少一个座位被预定，所以至多容纳 1 个四人小组，ans 至多增加 1
+            if ((row & 0b1111) == 0 || (row & 0b111100) == 0 || (row & 0b11110000) == 0) {
+                ans++;
+            }
+        }
+        return ans;
+    }
+}
